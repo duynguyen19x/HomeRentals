@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35209.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Documents", "0. Documents", "{08BFC2DA-3CF6-4471-BC25-BC7DB4BE0682}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation", "1. Presentation", "{8571DC50-4C09-44AD-B903-EAA8BFE7CA5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Business", "2. Business", "{91DE3E11-91F3-433C-85E6-1C83F8ED1C25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Data", "3. Data", "{660F0805-5747-445A-8C39-5590EC8F3985}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeRental", "HomeRental\HomeRental.csproj", "{AD47DF1F-0E74-48AD-A26E-2D0338ED3206}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD47DF1F-0E74-48AD-A26E-2D0338ED3206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD47DF1F-0E74-48AD-A26E-2D0338ED3206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD47DF1F-0E74-48AD-A26E-2D0338ED3206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD47DF1F-0E74-48AD-A26E-2D0338ED3206}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD47DF1F-0E74-48AD-A26E-2D0338ED3206} = {8571DC50-4C09-44AD-B903-EAA8BFE7CA5C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {146E0C38-13BF-41FD-A5D7-71AB0CA0EA34}
+	EndGlobalSection
+EndGlobal
