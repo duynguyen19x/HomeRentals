@@ -21,5 +21,15 @@ namespace HomeRental.Views.Systems
         {
             this.Close();
         }
+
+        private void btnCreateDatabase_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConnectDatabase_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

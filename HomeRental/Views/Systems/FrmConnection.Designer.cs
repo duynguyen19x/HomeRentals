@@ -151,6 +151,7 @@
             this.btnCreateDatabase.Size = new System.Drawing.Size(98, 23);
             this.btnCreateDatabase.TabIndex = 2;
             this.btnCreateDatabase.Text = "Tạo CSDL";
+            this.btnCreateDatabase.Click += new System.EventHandler(this.btnCreateDatabase_Click);
             // 
             // btnConnectDatabase
             // 
@@ -159,6 +160,7 @@
             this.btnConnectDatabase.Size = new System.Drawing.Size(98, 23);
             this.btnConnectDatabase.TabIndex = 3;
             this.btnConnectDatabase.Text = "Kết nối CSDL";
+            this.btnConnectDatabase.Click += new System.EventHandler(this.btnConnectDatabase_Click);
             // 
             // FrmConnection
             // 
