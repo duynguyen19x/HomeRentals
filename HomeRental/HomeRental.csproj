@@ -40,6 +40,9 @@
     <Reference Include="DevExpress.XtraBars.v21.2" />
     <Reference Include="DevExpress.Sparkline.v21.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v21.2" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -59,14 +62,22 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="IViews\Business\IUserViews.cs" />
     <Compile Include="IViews\IView.cs" />
     <Compile Include="IViews\Systems\IConnectionView.cs" />
     <Compile Include="IViews\Systems\ILoginView.cs" />
     <Compile Include="Presenters\BasePresenter.cs" />
+    <Compile Include="Presenters\Business\UserPresenter.cs" />
     <Compile Include="Presenters\Systems\ConnectionPresenter.cs" />
     <Compile Include="Presenters\Systems\LoginPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Business\Users\FrmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Business\Users\FrmUsers.Designer.cs">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Systems\FrmConnection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +103,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Business\Users\FrmUsers.resx">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Systems\FrmConnection.resx">
       <DependentUpon>FrmConnection.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +138,7 @@
       <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

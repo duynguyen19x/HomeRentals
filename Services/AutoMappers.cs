@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using BusinessObjects.Business;
 using BusinessObjects.Systems;
+using HomeRentals.Models.Business;
 using HomeRentals.Models.Systems;
 using System;
 using System.Collections.Generic;
@@ -45,6 +47,7 @@ namespace Services
         {
             CreateMap<LoginModel, LoginEntity>().ReverseMap();
             CreateMap<ConnectionModel, ConnectionEntity>().ReverseMap();
+            CreateMap<UserModel, UserEntity>().ReverseMap();
         }
     }
 }
