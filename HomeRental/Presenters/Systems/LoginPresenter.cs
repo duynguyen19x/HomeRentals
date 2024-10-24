@@ -27,7 +27,7 @@ namespace HomeRental.Presenters.Systems
                 Password = Model.Password,
             };
 
-            var ss = _loginServer.Authentication(login);
+            _loginServer.Authentication(login);
         }
     }
 }

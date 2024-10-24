@@ -1,4 +1,5 @@
 ﻿using DataAccess.IDao;
+using DataAccess.IDao.Systems;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace DataAccess.Dao.EntityFramework
 {
     public class DaoFactory : IDaoFactory
     {
+        public ILoginDao LoginDao => throw new NotImplementedException();
     }
 }

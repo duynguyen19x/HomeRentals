@@ -46,7 +46,10 @@ namespace HomeRental.Views.Systems
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            this.Hide();
 
+            var frm = new FrmMain();
+            frm.ShowDialog();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -10,6 +10,6 @@ namespace DataAccess.IDao
 {
     public interface IDaoFactory
     {
-        public ILoginDao LoginDao {  get; }
+        ILoginDao LoginDao { get; }
     }
 }
