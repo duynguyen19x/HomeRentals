@@ -23,25 +23,13 @@ namespace Services.Services.Systems
 
         public Result<bool> Authentication(LoginModel login)
         {
-            var loginEntity = new LoginEntity()
-            {
-                UserName = login.UserName,
-                Password = login.Password,
-            };
-
+            var loginEntity = ObjectMapper.Map<LoginEntity>(login);
             return Factory.LoginDao.Authentication(loginEntity);
         }
 
         public Result<bool> ConnectDatabase(ConnectionModel connection)
         {
-            var connectionEntity = new ConnectionEntity()
-            {
-                ServerName = connection.ServerName,
-                DatabaseName = connection.DatabaseName,
-                UserName = connection.UserName,
-                Password = connection.Password,
-            };
-
+            var connectionEntity = ObjectMapper.Map<ConnectionEntity>(connection);
             return Factory.LoginDao.ConnectDatabase(connectionEntity);
         }
     }

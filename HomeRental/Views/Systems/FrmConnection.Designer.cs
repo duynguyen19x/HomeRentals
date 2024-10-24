@@ -60,128 +60,124 @@
             this.groupBox1.Controls.Add(this.labelControl3);
             this.groupBox1.Controls.Add(this.labelControl2);
             this.groupBox1.Controls.Add(this.labelControl1);
-            this.groupBox1.Location = new System.Drawing.Point(18, 18);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(597, 202);
+            this.groupBox1.Size = new System.Drawing.Size(398, 131);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin kết nối";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(132, 149);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 22, 5);
+            this.txtPassword.Location = new System.Drawing.Point(88, 97);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Properties.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(438, 26);
+            this.txtPassword.Size = new System.Drawing.Size(292, 20);
             this.txtPassword.TabIndex = 7;
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(132, 109);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 5, 22, 5);
+            this.txtUserName.Location = new System.Drawing.Point(88, 71);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(438, 26);
+            this.txtUserName.Size = new System.Drawing.Size(292, 20);
             this.txtUserName.TabIndex = 6;
             // 
             // txtDatabaseName
             // 
-            this.txtDatabaseName.Location = new System.Drawing.Point(132, 69);
-            this.txtDatabaseName.Margin = new System.Windows.Forms.Padding(4, 5, 22, 5);
+            this.txtDatabaseName.Location = new System.Drawing.Point(88, 45);
+            this.txtDatabaseName.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
             this.txtDatabaseName.Name = "txtDatabaseName";
-            this.txtDatabaseName.Size = new System.Drawing.Size(438, 26);
+            this.txtDatabaseName.Size = new System.Drawing.Size(292, 20);
             this.txtDatabaseName.TabIndex = 5;
             // 
             // txtServerName
             // 
-            this.txtServerName.Location = new System.Drawing.Point(132, 29);
-            this.txtServerName.Margin = new System.Windows.Forms.Padding(4, 5, 22, 5);
+            this.txtServerName.Location = new System.Drawing.Point(88, 19);
+            this.txtServerName.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
             this.txtServerName.Name = "txtServerName";
-            this.txtServerName.Size = new System.Drawing.Size(438, 26);
+            this.txtServerName.Size = new System.Drawing.Size(292, 20);
             this.txtServerName.TabIndex = 4;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(27, 154);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(22, 5, 4, 5);
+            this.labelControl4.Location = new System.Drawing.Point(18, 100);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(70, 19);
+            this.labelControl4.Size = new System.Drawing.Size(48, 13);
             this.labelControl4.TabIndex = 3;
             this.labelControl4.Text = "Mật khẩu:";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(27, 114);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(22, 5, 4, 5);
+            this.labelControl3.Location = new System.Drawing.Point(18, 74);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(76, 19);
+            this.labelControl3.Size = new System.Drawing.Size(50, 13);
             this.labelControl3.TabIndex = 2;
             this.labelControl3.Text = "Tài khoản:";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(27, 74);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(22, 5, 4, 5);
+            this.labelControl2.Location = new System.Drawing.Point(18, 48);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(76, 19);
+            this.labelControl2.Size = new System.Drawing.Size(50, 13);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Tên CSDL:";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(27, 34);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(22, 5, 4, 5);
+            this.labelControl1.Location = new System.Drawing.Point(18, 22);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(97, 19);
+            this.labelControl1.Size = new System.Drawing.Size(64, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Địa chỉ CSDL:";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(468, 243);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancel.Location = new System.Drawing.Point(312, 158);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(147, 35);
+            this.btnCancel.Size = new System.Drawing.Size(98, 23);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnCreateDatabase
             // 
-            this.btnCreateDatabase.Location = new System.Drawing.Point(312, 243);
-            this.btnCreateDatabase.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCreateDatabase.Location = new System.Drawing.Point(208, 158);
             this.btnCreateDatabase.Name = "btnCreateDatabase";
-            this.btnCreateDatabase.Size = new System.Drawing.Size(147, 35);
+            this.btnCreateDatabase.Size = new System.Drawing.Size(98, 23);
             this.btnCreateDatabase.TabIndex = 2;
             this.btnCreateDatabase.Text = "Tạo CSDL";
             this.btnCreateDatabase.Click += new System.EventHandler(this.btnCreateDatabase_Click);
             // 
             // btnConnectDatabase
             // 
-            this.btnConnectDatabase.Location = new System.Drawing.Point(156, 243);
-            this.btnConnectDatabase.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnConnectDatabase.Location = new System.Drawing.Point(104, 158);
             this.btnConnectDatabase.Name = "btnConnectDatabase";
-            this.btnConnectDatabase.Size = new System.Drawing.Size(147, 35);
+            this.btnConnectDatabase.Size = new System.Drawing.Size(98, 23);
             this.btnConnectDatabase.TabIndex = 3;
             this.btnConnectDatabase.Text = "Kết nối CSDL";
             this.btnConnectDatabase.Click += new System.EventHandler(this.btnConnectDatabase_Click);
             // 
             // FrmConnection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 297);
+            this.ClientSize = new System.Drawing.Size(422, 193);
             this.Controls.Add(this.btnConnectDatabase);
             this.Controls.Add(this.btnCreateDatabase);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmConnection";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kết nối cơ sở dữ liệu";
+            this.Load += new System.EventHandler(this.FrmConnection_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();

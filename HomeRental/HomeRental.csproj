@@ -32,16 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v24.1" />
-    <Reference Include="DevExpress.Data.Desktop.v24.1" />
-    <Reference Include="DevExpress.Drawing.v24.1" />
-    <Reference Include="DevExpress.Data.v24.1" />
-    <Reference Include="DevExpress.Printing.v24.1.Core" />
-    <Reference Include="DevExpress.Utils.v24.1" />
-    <Reference Include="DevExpress.XtraBars.v24.1" />
-    <Reference Include="DevExpress.Sparkline.v24.1.Core" />
-    <Reference Include="DevExpress.XtraEditors.v24.1" />
+    <Reference Include="DevExpress.BonusSkins.v21.2" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2" />
+    <Reference Include="DevExpress.Data.v21.2" />
+    <Reference Include="DevExpress.Printing.v21.2.Core" />
+    <Reference Include="DevExpress.Utils.v21.2" />
+    <Reference Include="DevExpress.XtraBars.v21.2" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core" />
+    <Reference Include="DevExpress.XtraEditors.v21.2" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -63,6 +63,7 @@
     <Compile Include="IViews\Systems\IConnectionView.cs" />
     <Compile Include="IViews\Systems\ILoginView.cs" />
     <Compile Include="Presenters\BasePresenter.cs" />
+    <Compile Include="Presenters\Systems\ConnectionPresenter.cs" />
     <Compile Include="Presenters\Systems\LoginPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,6 +99,7 @@
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,4 +1,5 @@
-﻿using BusinessObjects.Systems;
+﻿using BusinessObjects.Business;
+using BusinessObjects.Systems;
 using DataAccess.IDao.Systems;
 using System;
 using System.Collections.Generic;
@@ -18,8 +19,8 @@ namespace DataAccess.Dao.AdoNet.Systems
 
             try
             {
-                var execute = DatabaseHelper.ExecuteStoredProcedure("Proc_Login", login);
-                if (execute < 1)
+                var user = DatabaseHelper.QuerySingleStoredProcedure<UserEntity>("Proc_GetUserByUserNameAndPasswords", login);
+                if (user == null)
                 {
                     result.Success = false;
                     result.Message = "Tài khoản hoặc mật khẩu không đúng!";
@@ -40,7 +41,7 @@ namespace DataAccess.Dao.AdoNet.Systems
 
             try
             {
-                var connectionString = string.Format("Data Source={0}; Initial Catalog={1}; Integrated Security=true; User ID={2}; Password={3};", connection.ServerName, connection.DatabaseName, connection.UserName, connection.Password);
+                var connectionString = string.Format("Data Source = {0}; Initial Catalog = {1}; Integrated Security = False; User ID = {2}; Password = {3}", connection.ServerName, connection.DatabaseName, connection.UserName, connection.Password);
                 DatabaseHelper.CreateConnection(connectionString);
             }
             catch (Exception ex)

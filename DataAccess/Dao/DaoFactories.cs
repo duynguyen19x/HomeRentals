@@ -13,11 +13,11 @@ namespace DataAccess.Dao
         {
             IDaoFactory factory = Common.DaoFactory;
 
-            if (factory != null)
+            if (factory == null)
             {
                 switch (dataProvider.ToLower())
                 {
-                    case "daofactory":
+                    case "adonet":
                         factory = new AdoNet.DaoFactory();
                         break;
                     case "entityframework":
@@ -27,6 +27,8 @@ namespace DataAccess.Dao
                         factory = new AdoNet.DaoFactory();
                         break;
                 }
+
+                Common.DaoFactory = factory;
             }
 
             return factory;

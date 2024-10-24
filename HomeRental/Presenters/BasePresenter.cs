@@ -8,11 +8,11 @@ namespace HomeRental.Presenters
 {
     public class BasePresenter<T>
     {
-        public BasePresenter(T model)
+        public BasePresenter(T view)
         {
-            Model = model;
+            View = view;
         }
 
-        public T Model { get; set; }
+        protected T View { get; private set; }
     }
 }

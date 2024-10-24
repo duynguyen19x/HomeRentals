@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Utilities;
 
 namespace HomeRental.Presenters.Systems
 {
@@ -19,15 +20,28 @@ namespace HomeRental.Presenters.Systems
             _loginServer = new LoginServices();
         }
 
-        public void Authentication()
+        public Result<bool> Authentication()
         {
             var login = new LoginModel()
             {
-                UserName = Model.UserName,
-                Password = Model.Password,
+                UserName = View.UserName,
+                Password = View.Password,
             };
 
-            _loginServer.Authentication(login);
+            return _loginServer.Authentication(login);
+        }
+
+        public Result<bool> ConnectDatabase(string serverName, string databaseName, string userName, string password)
+        {
+            ConnectionModel connection = new ConnectionModel()
+            {
+                ServerName = serverName,
+                DatabaseName = databaseName,
+                UserName = userName,
+                Password = password
+            };
+
+            return _loginServer.ConnectDatabase(connection);
         }
     }
 }

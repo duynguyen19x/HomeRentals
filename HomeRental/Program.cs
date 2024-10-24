@@ -1,6 +1,8 @@
-﻿using DevExpress.Skins;
+﻿using DevExpress.Entity.Model.Metadata;
+using DevExpress.Skins;
 using DevExpress.UserSkins;
 using HomeRental.Views.Systems;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,8 @@ namespace HomeRental
         [STAThread]
         static void Main()
         {
+            ObjectMapper.CreateMapper();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmLogin());

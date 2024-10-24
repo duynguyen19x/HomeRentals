@@ -15,10 +15,19 @@ namespace DataAccess.Dao.AdoNet
 
         public static void CreateConnection(string connectionString)
         {
-            if (connection == null)
-                connection = new SqlConnection(connectionString);
-            else if (connection.State == ConnectionState.Open)
-                connection.Open();
+            try
+            {
+                if (connection == null)
+                    connection = new SqlConnection(connectionString);
+
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+            }
+            catch (Exception ex)
+            {
+                connection = null;
+                throw ex;
+            }
         }
 
         // Hàm gọi Stored Procedure không trả về dữ liệu (INSERT, UPDATE, DELETE)
