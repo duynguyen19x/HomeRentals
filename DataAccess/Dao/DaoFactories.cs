@@ -11,15 +11,25 @@ namespace DataAccess.Dao
     {
         public static IDaoFactory GetFactory(string dataProvider)
         {
-            // return the requested DaoFactory
+            IDaoFactory factory = Common.DaoFactory;
 
-            switch (dataProvider.ToLower())
+            if (factory != null)
             {
-                case "DaoFactory": return new AdoNet.DaoFactory();
-                case "EntityFramework": return new EntityFramework.DaoFactory();
-
-                default: return new AdoNet.DaoFactory();
+                switch (dataProvider.ToLower())
+                {
+                    case "daofactory":
+                        factory = new AdoNet.DaoFactory();
+                        break;
+                    case "entityframework":
+                        factory = new EntityFramework.DaoFactory();
+                        break;
+                    default:
+                        factory = new AdoNet.DaoFactory();
+                        break;
+                }
             }
+
+            return factory;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Services
 {
     public class BaseServices
     {
-        static readonly string Provider = ConfigurationManager.AppSettings.Get("DataProvider");
-        public static readonly IDaoFactory Factory = DaoFactories.GetFactory("");
+        static readonly string provider = ConfigurationManager.AppSettings.Get("DataProvider");
+        public static readonly IDaoFactory Factory = DaoFactories.GetFactory(provider);
     }
 }

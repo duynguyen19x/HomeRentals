@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using HomeRental.IViews.Systems;
+using HomeRental.Presenters.Systems;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,9 +18,12 @@ namespace HomeRental.Views.Systems
         public FrmLogin()
         {
             InitializeComponent();
+            LoginPresenter = new LoginPresenter(this);
         }
 
         #region Member
+        public LoginPresenter LoginPresenter { get; set; }
+
         public string UserName
         {
             get => (string)txtUserName.EditValue;
@@ -47,12 +51,13 @@ namespace HomeRental.Views.Systems
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void btnSetupDatabase_Click(object sender, EventArgs e)
         {
-
+            var frm = new FrmConnection();
+            frm.ShowDialog();
         }
 
         #endregion

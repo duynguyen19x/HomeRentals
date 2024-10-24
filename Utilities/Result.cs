@@ -9,7 +9,7 @@ namespace Utilities
     public class Result<T>
     {
         public T ItemResult { get; set; }
-        public bool Success { get; set; }
+        public bool Success { get; set; } = true;
         public string Message { get; set; }
     }
 }

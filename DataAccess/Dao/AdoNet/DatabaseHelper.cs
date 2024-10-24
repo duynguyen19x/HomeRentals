@@ -9,41 +9,34 @@ using Dapper;
 
 namespace DataAccess.Dao.AdoNet
 {
-    public class DatabaseHelper
+    public static class DatabaseHelper
     {
-        public class DatabaseHelper
+        private static IDbConnection connection;
+
+        public static void CreateConnection(string connectionString)
         {
-            private readonly string _connectionString;
+            if (connection == null)
+                connection = new SqlConnection(connectionString);
+            else if (connection.State == ConnectionState.Open)
+                connection.Open();
+        }
 
-            private IDbConnection connection;
+        // Hàm gọi Stored Procedure không trả về dữ liệu (INSERT, UPDATE, DELETE)
+        public static int ExecuteStoredProcedure<T>(string storedProcedureName, T parameters)
+        {
+            return connection.Execute(storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
+        }
 
-            public DatabaseHelper(string connectionString)
-            {
-                _connectionString = connectionString;
-            }
+        // Hàm gọi Stored Procedure trả về danh sách dữ liệu
+        public static IEnumerable<T> QueryStoredProcedure<T>(string storedProcedureName, object parameters = null)
+        {
+            return connection.Query<T>(storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
+        }
 
-            private IDbConnection CreateConnection()
-            {
-                return new SqlConnection(_connectionString);
-            }
-
-            // Hàm gọi Stored Procedure không trả về dữ liệu (INSERT, UPDATE, DELETE)
-            public int ExecuteStoredProcedure<T>(string storedProcedureName, T parameters)
-            {
-                return connection.Execute(storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
-            }
-
-            // Hàm gọi Stored Procedure trả về danh sách dữ liệu
-            public IEnumerable<T> QueryStoredProcedure<T>(string storedProcedureName, object parameters = null)
-            {
-                return connection.Query<T>(storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
-            }
-
-            // Hàm gọi Stored Procedure trả về một dòng dữ liệu
-            public T QuerySingleStoredProcedure<T>(string storedProcedureName, object parameters = null)
-            {
-                return connection.QuerySingleOrDefault<T>(storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
-            }
+        // Hàm gọi Stored Procedure trả về một dòng dữ liệu
+        public static T QuerySingleStoredProcedure<T>(string storedProcedureName, object parameters = null)
+        {
+            return connection.QuerySingleOrDefault<T>(storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
         }
     }
 }

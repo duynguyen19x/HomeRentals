@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Dao\AdoNet\DatabaseHelper.cs" />
     <Compile Include="Dao\AdoNet\Systems\LoginDao.cs" />
+    <Compile Include="Dao\Common.cs" />
     <Compile Include="Dao\DaoFactories.cs" />
     <Compile Include="Dao\AdoNet\DaoFactory.cs" />
     <Compile Include="Dao\EntityFramework\DaoFactory.cs" />
