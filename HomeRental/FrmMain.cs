@@ -29,22 +29,23 @@ namespace HomeRental
 
         private void TabCreate(XtraForm frm, string tabTitle = null)
         {
-            int index = CheckExistsTab(tabTitle);
-            if (index >= 0)
+            var tabPageSelected = GetTabPageSelected("tab_" + frm.Name);
+            if (tabPageSelected != null)
             {
-                xtraTabControl.SelectedTabPage = xtraTabControl.TabPages[index];
+                xtraTabControl.SelectedTabPage = tabPageSelected;
                 xtraTabControl.SelectedTabPage.Text = tabTitle ?? frm.Text;
             }
             else
             {
                 XtraTabPage tabPage = new XtraTabPage { Text = tabTitle ?? frm.Text };
-                tabPage.AutoScroll = true;
                 tabPage.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
-                xtraTabControl.TabPages.Add(tabPage);
-                xtraTabControl.SelectedTabPage = tabPage;
                 tabPage.AutoScroll = true;
                 tabPage.AutoScrollMargin = new Size(20, 20);
                 tabPage.AutoScrollMinSize = new Size(tabPage.Width, tabPage.Height);
+                tabPage.Name = "tab_" + frm.Name;
+
+                xtraTabControl.TabPages.Add(tabPage);
+                xtraTabControl.SelectedTabPage = tabPage;
 
                 frm.TopLevel = false;
                 frm.Parent = tabPage;
@@ -54,18 +55,9 @@ namespace HomeRental
             }
         }
 
-        private int CheckExistsTab(string tabName)
+        private XtraTabPage GetTabPageSelected(string frmName)
         {
-            int temp = -1;
-            for (int i = 0; i < xtraTabControl.TabPages.Count; i++)
-            {
-                if (xtraTabControl.TabPages[i].Text == tabName)
-                {
-                    temp = i;
-                    break;
-                }
-            }
-            return temp;
+            return xtraTabControl.TabPages.FirstOrDefault(f => f.Name == frmName);
         }
 
         #endregion

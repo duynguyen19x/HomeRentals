@@ -21,5 +21,30 @@ namespace Services.Services.Business
                 Items = ObjectMapper.Map<IList<UserModel>>(users.Items)
             };
         }
+
+        public Result<UserModel> Save(UserModel user)
+        {
+            var userEntity = ObjectMapper.Map<UserEntity>(user);
+            var resultSave = Factory.UserDao.Save(userEntity);
+
+            return new Result<UserModel>()
+            {
+                Success = resultSave.Success,
+                Message = resultSave.Message,
+                Items = ObjectMapper.Map<UserModel>(resultSave.Items)
+            };
+        }
+
+        public Result<UserModel> GetUserById(Guid id)
+        {
+            var result = Factory.UserDao.GetUserById(id);
+
+            return new Result<UserModel>()
+            {
+                Success = result.Success,
+                Message = result.Message,
+                Items = ObjectMapper.Map<UserModel>(result.Items)
+            };
+        }
     }
 }

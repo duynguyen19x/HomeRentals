@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeRental.IViews.Business
+namespace HomeRental.IViews.Business.User
 {
     public interface IUserViews
     {

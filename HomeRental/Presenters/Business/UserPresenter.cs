@@ -1,4 +1,4 @@
-﻿using HomeRental.IViews.Business;
+﻿using HomeRental.IViews.Business.User;
 using HomeRentals.Models.Business;
 using Services.IServices.Business;
 using Services.Services.Business;

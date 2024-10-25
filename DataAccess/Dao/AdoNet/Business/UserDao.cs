@@ -27,5 +27,44 @@ namespace DataAccess.Dao.AdoNet.Business
 
             return result;
         }
+
+        public Result<UserEntity> GetUserById(Guid id)
+        {
+            var result = new Result<UserEntity>();
+
+            try
+            {
+                result.Items = DatabaseHelper.QuerySingleStoredProcedure<UserEntity>("Proc_GetUserById");
+            }
+            catch (Exception ex)
+            {
+                result.Message = ex.Message;
+                result.Success = false;
+            }
+
+            return result;
+        }
+
+        public Result<UserEntity> Save(UserEntity user)
+        {
+            var result = new Result<UserEntity>();
+
+            try
+            {
+                if (user.Id == null || user.Id == (Guid)default)
+                    user.Id = Guid.NewGuid();
+
+                var i = DatabaseHelper.ExecuteStoredProcedure("Proc_CreateOrEditUser", user);
+                if (i > 0)
+                    result.Items = DatabaseHelper.QuerySingleStoredProcedure<UserEntity>("Proc_GetUserById", new { Id = user.Id });
+            }
+            catch (Exception ex)
+            {
+                result.Message = ex.Message;
+                result.Success = false;
+            }
+
+            return result;
+        }
     }
 }
