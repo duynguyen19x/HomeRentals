@@ -3,12 +3,6 @@ using HomeRental.IViews.Business.User;
 using HomeRental.Presenters.Business;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities.Enum;
 
@@ -77,8 +71,8 @@ namespace HomeRental.Views.Business.Users
 
         public int Gender
         {
-            get => (int)cbbGender.EditValue;
-            set => cbbGender.EditValue = value;
+            get => (int)cbbGender.SelectedIndex;
+            set => cbbGender.SelectedIndex = value;
         }
 
         public string PhoneNumber
@@ -101,6 +95,7 @@ namespace HomeRental.Views.Business.Users
                     RePassword = result.Items.Password;
                     Address = result.Items.Address;
                     FirstName = result.Items.FirstName;
+                    LastName = result.Items.LastName;
                     DOB = result.Items.DOB;
                     Gender = result.Items.Gender;
                     PhoneNumber = result.Items.PhoneNumber;
@@ -116,7 +111,7 @@ namespace HomeRental.Views.Business.Users
                 if (result.Success)
                     MessageBox.Show("Lưu thông công!", "Thông báo");
                 else if (result.Message != null)
-                    MessageBox.Show("Lưu không thông công!" + "\n" + result.Message, "Thông báo");
+                    MessageBox.Show("Lưu không thành công!" + "\n" + result.Message, "Thông báo");
             }
         }
 

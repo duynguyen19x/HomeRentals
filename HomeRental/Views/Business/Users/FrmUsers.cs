@@ -32,28 +32,43 @@ namespace HomeRental.Views.Business.Users
         #region Function
         private void FrmUsers_Load(object sender, EventArgs e)
         {
-            Users = _userPresenter.GetUsers().Items;
+            LoadData();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            var frm = new FrmUserDetails(Utilities.Enum.ActionModeType.Add, null);
+            frm.ShowDialog();
 
+            LoadData();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            var userSelected = grvUsers.GetFocusedRow() as UserModel;
+            if (userSelected != null)
+            {
+                var frm = new FrmUserDetails(Utilities.Enum.ActionModeType.Edit, userSelected.Id);
+                frm.ShowDialog();
 
+                LoadData();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            LoadData();
         }
 
         private void FrmUsers_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-        #endregion   
+
+        private void LoadData()
+        {
+            Users = _userPresenter.GetUsers().Items;
+        }
+        #endregion
     }
 }

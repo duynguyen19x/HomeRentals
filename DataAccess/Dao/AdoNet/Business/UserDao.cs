@@ -34,7 +34,7 @@ namespace DataAccess.Dao.AdoNet.Business
 
             try
             {
-                result.Items = DatabaseHelper.QuerySingleStoredProcedure<UserEntity>("Proc_GetUserById");
+                result.Items = DatabaseHelper.QuerySingleStoredProcedure<UserEntity>("Proc_GetUserById", new { Id = id });
             }
             catch (Exception ex)
             {
@@ -51,12 +51,14 @@ namespace DataAccess.Dao.AdoNet.Business
 
             try
             {
-                if (user.Id == null || user.Id == (Guid)default)
-                    user.Id = Guid.NewGuid();
+                result.Success = DatabaseHelper.ExecuteStoredProcedure("Proc_CreateOrEditUser", user) > 0;
 
-                var i = DatabaseHelper.ExecuteStoredProcedure("Proc_CreateOrEditUser", user);
-                if (i > 0)
-                    result.Items = DatabaseHelper.QuerySingleStoredProcedure<UserEntity>("Proc_GetUserById", new { Id = user.Id });
+                //if (user.Id == null || user.Id == (Guid)default)
+                //    user.Id = Guid.NewGuid();
+
+                //var i = DatabaseHelper.ExecuteStoredProcedure("Proc_CreateOrEditUser", user);
+                //if (i > 0)
+                //    result.Items = DatabaseHelper.QuerySingleStoredProcedure<UserEntity>("Proc_GetUserById", new { Id = user.Id });
             }
             catch (Exception ex)
             {
