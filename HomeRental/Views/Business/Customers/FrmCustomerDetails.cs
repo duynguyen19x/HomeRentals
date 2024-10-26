@@ -1,81 +1,54 @@
-﻿using DevExpress.XtraEditors;
-using HomeRental.IViews.Business.User;
-using HomeRental.Presenters.Business;
+﻿using HomeRental.IViews.Business.Customers;
 using HomeRental.Presenters.Business.User;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Utilities.Enum;
 
-namespace HomeRental.Views.Business.Users
+namespace HomeRental.Views.Business.Customers
 {
-    public partial class FrmUserDetails : XtraForm, IUserDetailViews
+    public partial class FrmCustomerDetails : DevExpress.XtraEditors.XtraForm, ICustomerDetailViews
     {
-        UserDetailPresenter _userDetailPresenter;
+        CustomerDetailPresenter _customerDetailPresenter;
 
-        public FrmUserDetails(ActionModeType action, Guid? id)
+        public FrmCustomerDetails(ActionModeType action, Guid? id)
         {
             InitializeComponent();
-
             Action = action;
             Id = id;
 
-            _userDetailPresenter = new UserDetailPresenter(this);
+            _customerDetailPresenter = new CustomerDetailPresenter(this);
         }
 
         #region Member
         public ActionModeType Action { get; set; }
 
         public Guid? Id { get; set; }
-
-        public string UserName
+        public string CustomerCode
         {
-            get => (string)txtUsername.EditValue;
-            set => txtUsername.EditValue = value;
+            get => (string)txtCode.EditValue;
+            set => txtCode.EditValue = value;
         }
-
-        public string Password
+        public string CustomerName
         {
-            get => (string)txtPassword.EditValue;
-            set => txtPassword.EditValue = value;
+            get => (string)txtName.EditValue;
+            set => txtName.EditValue = value;
         }
-
-        public string RePassword
-        {
-            get => (string)txtRePassword.EditValue;
-            set => txtRePassword.EditValue = value;
-        }
-
         public string Address
         {
             get => (string)txtAddress.EditValue;
             set => txtAddress.EditValue = value;
         }
-
-        public string FirstName
-        {
-            get => (string)txtFirstName.EditValue;
-            set => txtFirstName.EditValue = value;
-        }
-
-        public string LastName
-        {
-            get => (string)txtLastName.EditValue;
-            set => txtLastName.EditValue = value;
-        }
-
         public DateTime DOB
         {
             get => (DateTime)deDob.EditValue;
             set => deDob.EditValue = value;
         }
-
         public int Gender
         {
             get => (int)cbbGender.SelectedIndex;
             set => cbbGender.SelectedIndex = value;
         }
-
         public string PhoneNumber
         {
             get => (string)txtPhoneNumber.EditValue;
@@ -83,23 +56,20 @@ namespace HomeRental.Views.Business.Users
         }
         #endregion
 
-        private void FrmUserDetails_Load(object sender, EventArgs e)
+        private void FrmCustomerDetails_Load(object sender, EventArgs e)
         {
             if (Action == ActionModeType.Edit && Id != null)
             {
-                var result = _userDetailPresenter.GetUserById(Id.GetValueOrDefault());
+                var result = _customerDetailPresenter.GetCustomerById(Id.GetValueOrDefault());
                 if (result.Items != null)
                 {
                     Id = result.Items.Id;
-                    UserName = result.Items.UserName;
-                    Password = result.Items.Password;
-                    RePassword = result.Items.Password;
                     Address = result.Items.Address;
-                    FirstName = result.Items.FirstName;
-                    LastName = result.Items.LastName;
                     DOB = result.Items.DOB;
                     Gender = result.Items.Gender;
                     PhoneNumber = result.Items.PhoneNumber;
+                    CustomerCode = result.Items.Code;
+                    CustomerName = result.Items.Name;
                 }
             }
         }
@@ -108,7 +78,7 @@ namespace HomeRental.Views.Business.Users
         {
             if (BeforeSave())
             {
-                var result = _userDetailPresenter.Save();
+                var result = _customerDetailPresenter.Save();
                 if (result.Success)
                     MessageBox.Show("Lưu thông công!", "Thông báo");
                 else if (result.Message != null)
@@ -127,14 +97,10 @@ namespace HomeRental.Views.Business.Users
 
             var erros = new List<string>();
 
-            if (string.IsNullOrEmpty(UserName) || string.IsNullOrWhiteSpace(UserName))
-                erros.Add("Tên đăng nhập");
-            if (string.IsNullOrEmpty(LastName) || string.IsNullOrWhiteSpace(LastName))
-                erros.Add("Họ và tên đệm");
-            if (string.IsNullOrEmpty(FirstName) || string.IsNullOrWhiteSpace(FirstName))
-                erros.Add("Tên");
-            if (string.IsNullOrEmpty(Password) || string.IsNullOrWhiteSpace(Password))
-                erros.Add("Mật khẩu");
+            if (string.IsNullOrEmpty(CustomerCode) || string.IsNullOrWhiteSpace(CustomerCode))
+                erros.Add("Mã khách hàng");
+            if (string.IsNullOrEmpty(CustomerName) || string.IsNullOrWhiteSpace(CustomerName))
+                erros.Add("Tên khách hàng");
 
             if (erros.Count > 0)
             {
@@ -146,13 +112,6 @@ namespace HomeRental.Views.Business.Users
             if (DOB.Date >= DateTime.Today)
             {
                 MessageBox.Show($"Ngày sinh {DOB.Date.ToString("dd/MM/yyyy")} phải nhỏ hơn ngày hiện tại {DateTime.Today.ToString("dd/MM/yyyy")}", "Thông báo");
-                isSave = false;
-                return isSave;
-            }
-
-            if (Password != (string)txtRePassword.EditValue)
-            {
-                MessageBox.Show("Mật khẩu và Xác nhận mật khẩu không trừng khớp!", "Thông báo");
                 isSave = false;
                 return isSave;
             }

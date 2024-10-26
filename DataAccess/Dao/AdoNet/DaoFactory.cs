@@ -15,5 +15,6 @@ namespace DataAccess.Dao.AdoNet
     {
         public ILoginDao LoginDao => new LoginDao();
         public IUserDao UserDao => new UserDao();
+        public ICustomerDao CustomerDao => new CustomerDao();
     }
 }

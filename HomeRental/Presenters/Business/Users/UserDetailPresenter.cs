@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Utilities;
 
-namespace HomeRental.Presenters.Business
+namespace HomeRental.Presenters.Business.User
 {
     public class UserDetailPresenter : BasePresenter<IUserDetailViews>
     {

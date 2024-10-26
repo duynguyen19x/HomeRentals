@@ -1,4 +1,5 @@
-﻿using DataAccess.Dao.AdoNet.Systems;
+﻿using DataAccess.Dao.AdoNet.Business;
+using DataAccess.Dao.AdoNet.Systems;
 using DataAccess.IDao.Business;
 using DataAccess.IDao.Systems;
 using System;
@@ -13,5 +14,6 @@ namespace DataAccess.IDao
     {
         ILoginDao LoginDao { get; }
         IUserDao UserDao { get; }
+        ICustomerDao CustomerDao { get; }
     }
 }

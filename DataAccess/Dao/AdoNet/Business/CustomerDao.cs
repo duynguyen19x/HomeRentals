@@ -9,15 +9,15 @@ using Utilities;
 
 namespace DataAccess.Dao.AdoNet.Business
 {
-    public class UserDao : IUserDao
+    internal class CustomerDao : ICustomerDao
     {
-        public Result<IList<UserEntity>> GetUsers()
+        public Result<IList<CustomerEntity>> GetCustomers()
         {
-            var result = new Result<IList<UserEntity>>();
+            var result = new Result<IList<CustomerEntity>>();
 
             try
             {
-                result.Items = DatabaseHelper.QueryStoredProcedure<UserEntity>("Proc_GetUsers").ToList();
+                result.Items = DatabaseHelper.QueryStoredProcedure<CustomerEntity>("Proc_GetCustomers").ToList();
             }
             catch (Exception ex)
             {
@@ -28,13 +28,13 @@ namespace DataAccess.Dao.AdoNet.Business
             return result;
         }
 
-        public Result<UserEntity> GetUserById(Guid id)
+        public Result<CustomerEntity> GetCustomerById(Guid id)
         {
-            var result = new Result<UserEntity>();
+            var result = new Result<CustomerEntity>();
 
             try
             {
-                result.Items = DatabaseHelper.QuerySingleStoredProcedure<UserEntity>("Proc_GetUserById", new { Id = id });
+                result.Items = DatabaseHelper.QuerySingleStoredProcedure<CustomerEntity>("Proc_GetCustomerById", new { Id = id });
             }
             catch (Exception ex)
             {
@@ -45,13 +45,13 @@ namespace DataAccess.Dao.AdoNet.Business
             return result;
         }
 
-        public Result<UserEntity> Save(UserEntity user)
+        public Result<CustomerEntity> Save(CustomerEntity customer)
         {
-            var result = new Result<UserEntity>();
+            var result = new Result<CustomerEntity>();
 
             try
             {
-                result.Success = DatabaseHelper.ExecuteStoredProcedure("Proc_CreateOrEditUser", user) > 0;
+                result.Success = DatabaseHelper.ExecuteStoredProcedure("Proc_CreateOrEditCustomer", customer) > 0;
             }
             catch (Exception ex)
             {
@@ -62,13 +62,13 @@ namespace DataAccess.Dao.AdoNet.Business
             return result;
         }
 
-        public Result<bool> DeleteUserById(Guid id)
+        public Result<bool> DeleteCustomerById(Guid id)
         {
             var result = new Result<bool>();
 
             try
             {
-                result.Success = DatabaseHelper.ExecuteStoredProcedure("Proc_DeleteUserById", new { Id = id }) > 0;
+                result.Success = DatabaseHelper.ExecuteStoredProcedure("Proc_DeleteCustomerById", new { Id = id }) > 0;
             }
             catch (Exception ex)
             {

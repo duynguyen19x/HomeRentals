@@ -1,5 +1,7 @@
 ﻿using HomeRental.IViews.Business.User;
 using HomeRental.Presenters.Business;
+using HomeRental.Presenters.Business.Customer;
+using HomeRental.Presenters.Business.User;
 using HomeRentals.Models.Business;
 using System;
 using System.Collections.Generic;
@@ -57,12 +59,19 @@ namespace HomeRental.Views.Business.Users
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            LoadData();
-        }
-
-        private void FrmUsers_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
+            var customerSelected = grvUsers.GetFocusedRow() as CustomerModel;
+            if (customerSelected != null)
+            {
+                var result = _userPresenter.DeleteUserById(customerSelected.Id.GetValueOrDefault());
+                if (result.Success)
+                {
+                    LoadData();
+                }
+                else if (result.Message != null)
+                {
+                    MessageBox.Show("Xóa không thành công!" + "\n" + result.Message, "Thông báo");
+                }
+            }
         }
 
         private void LoadData()

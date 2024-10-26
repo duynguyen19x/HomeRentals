@@ -2,10 +2,11 @@
 using HomeRentals.Models.Business;
 using Services.IServices.Business;
 using Services.Services.Business;
+using System;
 using System.Collections.Generic;
 using Utilities;
 
-namespace HomeRental.Presenters.Business
+namespace HomeRental.Presenters.Business.User
 {
     public class UserPresenter : BasePresenter<IUserViews>
     {
@@ -19,6 +20,11 @@ namespace HomeRental.Presenters.Business
         public Result<IList<UserModel>> GetUsers()
         {
             return _userService.GetUsers();
+        }
+
+        public Result<bool> DeleteUserById(Guid id)
+        {
+            return _userService.DeleteUserById(id);
         }
     }
 }

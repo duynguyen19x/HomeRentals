@@ -47,9 +47,11 @@
   <ItemGroup>
     <Compile Include="AutoMappers.cs" />
     <Compile Include="BaseServices.cs" />
+    <Compile Include="IServices\Business\ICustomerService.cs" />
     <Compile Include="IServices\Systems\ILoginServices.cs" />
     <Compile Include="IServices\Business\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Business\CustomerService.cs" />
     <Compile Include="Services\Business\UserService.cs" />
     <Compile Include="Services\Systems\LoginServices.cs" />
   </ItemGroup>

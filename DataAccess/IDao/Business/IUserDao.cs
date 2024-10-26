@@ -10,5 +10,6 @@ namespace DataAccess.IDao.Business
         Result<IList<UserEntity>> GetUsers();
         Result<UserEntity> Save(UserEntity user);
         Result<UserEntity> GetUserById(Guid id);
+        Result<bool> DeleteUserById(Guid id);
     }
 }

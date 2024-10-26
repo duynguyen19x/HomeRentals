@@ -21,10 +21,9 @@ namespace HomeRental
 
         #region Function
 
-        private void btnUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            var frm = new FrmUsers();
-            TabCreate(frm);
+            Application.Exit();
         }
 
         private void TabCreate(XtraForm frm, string tabTitle = null)
@@ -60,11 +59,34 @@ namespace HomeRental
             return xtraTabControl.TabPages.FirstOrDefault(f => f.Name == frmName);
         }
 
+        private void xtraTabControl_CloseButtonClick(object sender, EventArgs e)
+        {
+            try
+            {
+                XtraTabControl TabControl = (XtraTabControl)sender;
+                int i = TabControl.SelectedTabPageIndex;
+                TabControl.TabPages[i].Dispose();
+                if (i > 0)
+                    TabControl.SelectedTabPageIndex = i - 1;
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = new FrmUsers();
+            TabCreate(frm);
+        }
+
         #endregion
 
-        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        private void btnCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Application.Exit();
+
         }
     }
 }

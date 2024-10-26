@@ -31,7 +31,6 @@ namespace Services.Services.Business
             {
                 Success = resultSave.Success,
                 Message = resultSave.Message,
-                Items = ObjectMapper.Map<UserModel>(resultSave.Items)
             };
         }
 
@@ -45,6 +44,11 @@ namespace Services.Services.Business
                 Message = result.Message,
                 Items = ObjectMapper.Map<UserModel>(result.Items)
             };
+        }
+
+        public Result<bool> DeleteUserById(Guid id)
+        {
+            return Factory.UserDao.DeleteUserById(id);
         }
     }
 }

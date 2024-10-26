@@ -14,5 +14,6 @@ namespace Services.IServices.Business
         Result<IList<UserModel>> GetUsers();
         Result<UserModel> Save(UserModel user);
         Result<UserModel> GetUserById(Guid id);
+        Result<bool> DeleteUserById(Guid id);
     }
 }
