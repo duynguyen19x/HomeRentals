@@ -22,16 +22,10 @@ namespace Services.Services.Business
             };
         }
 
-        public Result<UserModel> Save(UserModel user)
+        public Result<Guid> Save(UserModel user)
         {
             var userEntity = ObjectMapper.Map<UserEntity>(user);
-            var resultSave = Factory.UserDao.Save(userEntity);
-
-            return new Result<UserModel>()
-            {
-                Success = resultSave.Success,
-                Message = resultSave.Message,
-            };
+            return Factory.UserDao.Save(userEntity);
         }
 
         public Result<UserModel> GetUserById(Guid id)

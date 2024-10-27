@@ -48,6 +48,7 @@ namespace Services
             CreateMap<LoginModel, LoginEntity>().ReverseMap();
             CreateMap<ConnectionModel, ConnectionEntity>().ReverseMap();
             CreateMap<UserModel, UserEntity>().ReverseMap();
+            CreateMap<CustomerModel, CustomerEntity>().ReverseMap();
         }
     }
 }

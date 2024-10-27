@@ -12,8 +12,8 @@ namespace DataAccess.IDao.Business
     public interface ICustomerDao
     {
         Result<IList<CustomerEntity>> GetCustomers();
-        Result<CustomerEntity> Save(CustomerEntity customer);
+        Result<Guid> Save(CustomerEntity customer);
         Result<bool> DeleteCustomerById(Guid id);
-
+        Result<CustomerEntity> GetCustomerById(Guid id);
     }
 }

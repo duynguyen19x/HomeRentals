@@ -6,7 +6,6 @@ using Services.Services.Business;
 using System;
 using System.Collections.Generic;
 using Utilities;
-using static DevExpress.Data.Filtering.Helpers.SubExprHelper.ThreadHoppingFiltering;
 
 namespace HomeRental.Presenters.Business.Customer
 {

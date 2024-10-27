@@ -26,7 +26,7 @@ namespace HomeRental.Presenters.Business.User
             return _customerService.GetCustomerById(id);
         }
 
-        public Result<CustomerModel> Save()
+        public Result<Guid> Save()
         {
             return _customerService.Save(new CustomerModel()
             {

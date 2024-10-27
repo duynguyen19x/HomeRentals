@@ -25,7 +25,7 @@ namespace HomeRentals.Models.Business
                         genderName = "Không xác định";
                         break;
                     case GenderType.Male:
-                        genderName = "Name";
+                        genderName = "Nam";
                         break;
                     case GenderType.Famale:
                         genderName = "Nữ";

@@ -45,13 +45,13 @@ namespace DataAccess.Dao.AdoNet.Business
             return result;
         }
 
-        public Result<CustomerEntity> Save(CustomerEntity customer)
+        public Result<Guid> Save(CustomerEntity customer)
         {
-            var result = new Result<CustomerEntity>();
+            var result = new Result<Guid>();
 
             try
             {
-                result.Success = DatabaseHelper.ExecuteStoredProcedure("Proc_CreateOrEditCustomer", customer) > 0;
+                result.Items = DatabaseHelper.QuerySingleStoredProcedure<Guid>("Proc_CreateOrEditCustomer", customer);
             }
             catch (Exception ex)
             {

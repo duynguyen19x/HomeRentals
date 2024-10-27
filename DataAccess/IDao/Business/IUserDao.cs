@@ -8,7 +8,7 @@ namespace DataAccess.IDao.Business
     public interface IUserDao
     {
         Result<IList<UserEntity>> GetUsers();
-        Result<UserEntity> Save(UserEntity user);
+        Result<Guid> Save(UserEntity user);
         Result<UserEntity> GetUserById(Guid id);
         Result<bool> DeleteUserById(Guid id);
     }

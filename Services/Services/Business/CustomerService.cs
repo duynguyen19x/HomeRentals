@@ -21,16 +21,10 @@ namespace Services.Services.Business
             };
         }
 
-        public Result<CustomerModel> Save(CustomerModel Customer)
+        public Result<Guid> Save(CustomerModel Customer)
         {
             var CustomerEntity = ObjectMapper.Map<CustomerEntity>(Customer);
-            var resultSave = Factory.CustomerDao.Save(CustomerEntity);
-
-            return new Result<CustomerModel>()
-            {
-                Success = resultSave.Success,
-                Message = resultSave.Message,
-            };
+            return Factory.CustomerDao.Save(CustomerEntity);
         }
 
         public Result<CustomerModel> GetCustomerById(Guid id)

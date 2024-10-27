@@ -42,8 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\CustomerEntity.cs" />
-    <Compile Include="Business\CustomerRentalProperty.cs" />
-    <Compile Include="Business\RentalPropertyListEntity.cs" />
+    <Compile Include="Business\CustomerHomeRentalEntity.cs" />
+    <Compile Include="Business\HomeRentalEntity.cs" />
     <Compile Include="Business\UserEntity.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

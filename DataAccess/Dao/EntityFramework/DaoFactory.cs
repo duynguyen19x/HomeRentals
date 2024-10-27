@@ -14,5 +14,7 @@ namespace DataAccess.Dao.EntityFramework
         public ILoginDao LoginDao => throw new NotImplementedException();
 
         public IUserDao UserDao => throw new NotImplementedException();
+
+        public ICustomerDao CustomerDao => throw new NotImplementedException();
     }
 }

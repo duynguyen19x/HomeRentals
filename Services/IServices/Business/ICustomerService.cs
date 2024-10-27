@@ -11,7 +11,7 @@ namespace Services.IServices.Business
     public interface ICustomerService
     {
         Result<IList<CustomerModel>> GetCustomers();
-        Result<CustomerModel> Save(CustomerModel Customer);
+        Result<Guid> Save(CustomerModel Customer);
         Result<CustomerModel> GetCustomerById(Guid id);
         Result<bool> DeleteCustomerById(Guid id);
     }

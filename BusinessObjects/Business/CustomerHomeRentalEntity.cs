@@ -10,7 +10,7 @@ namespace BusinessObjects.Business
     /// <summary>
     /// Khách hàng thuê nhà
     /// </summary>
-    public class CustomerRentalProperty : Entity<Guid>
+    public class CustomerHomeRentalEntity : Entity<Guid>
     {
         public Guid? CustomerId { get; set; }
         public Guid? RentalPropertyId { get; set; }

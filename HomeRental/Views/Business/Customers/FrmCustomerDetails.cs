@@ -80,7 +80,10 @@ namespace HomeRental.Views.Business.Customers
             {
                 var result = _customerDetailPresenter.Save();
                 if (result.Success)
+                {
                     MessageBox.Show("Lưu thông công!", "Thông báo");
+                    Id = result.Items;
+                }    
                 else if (result.Message != null)
                     MessageBox.Show("Lưu không thành công!" + "\n" + result.Message, "Thông báo");
             }
