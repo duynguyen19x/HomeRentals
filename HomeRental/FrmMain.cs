@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
 using HomeRental.Views.Business.Customers;
+using HomeRental.Views.Business.HomeRentals;
 using HomeRental.Views.Business.Users;
 using System;
 using System.Collections.Generic;
@@ -88,6 +89,13 @@ namespace HomeRental
             var frm = new FrmCustomers();
             TabCreate(frm);
         }
+
+        private void btnHomeRental_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = new FrmHomeRentals();
+            TabCreate(frm);
+        }
+
         #endregion
     }
 }

@@ -15,5 +15,6 @@ namespace DataAccess.IDao
         ILoginDao LoginDao { get; }
         IUserDao UserDao { get; }
         ICustomerDao CustomerDao { get; }
+        IHomeRentalDao HomeRentalDao { get; }
     }
 }

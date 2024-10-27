@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HomeRental.IViews.Business.Customers
 {
-    public interface ICustomerViews
+    public interface ICustomerViews : IView
     {
         IList<CustomerModel> Customers { get; set; }
     }

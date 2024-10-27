@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeRental.IViews.Business.Customers
 {
-    public interface ICustomerDetailViews
+    public interface ICustomerDetailViews : IView
     {
         Guid? Id { get; set; }
         string CustomerCode { get; set; }

@@ -39,8 +39,8 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lblTitle = new DevExpress.XtraEditors.LabelControl();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lblTitle = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grcHomeRental)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvHomeRental)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,7 @@
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Thêm";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -62,6 +63,7 @@
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 13;
             this.btnEdit.Text = "Sửa";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -71,6 +73,7 @@
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "Xóa";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // grcHomeRental
             // 
@@ -164,6 +167,15 @@
             this.gridColumn6.VisibleIndex = 5;
             this.gridColumn6.Width = 105;
             // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Hướng";
+            this.gridColumn7.FieldName = "Facing";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
+            // 
             // lblTitle
             // 
             this.lblTitle.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
@@ -174,15 +186,6 @@
             this.lblTitle.Size = new System.Drawing.Size(229, 25);
             this.lblTitle.TabIndex = 10;
             this.lblTitle.Text = "Danh sách nhà cho thuê";
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "Hướng";
-            this.gridColumn7.FieldName = "Facing";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.OptionsColumn.AllowEdit = false;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
             // 
             // FrmHomeRentals
             // 
@@ -197,6 +200,7 @@
             this.Name = "FrmHomeRentals";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhà cho thuê";
+            this.Load += new System.EventHandler(this.FrmHomeRentals_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grcHomeRental)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvHomeRental)).EndInit();
             this.ResumeLayout(false);

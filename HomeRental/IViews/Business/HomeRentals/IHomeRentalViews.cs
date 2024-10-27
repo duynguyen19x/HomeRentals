@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeRental.IViews.Business.User
+namespace HomeRental.IViews.Business.HomeRentals
 {
-    public interface IUserViews : IView
+    public interface IHomeRentalViews
     {
-        IList<UserModel> Users { get; set; }
+        IList<HomeRentalModel> HomeRentals { get; set; }
     }
 }

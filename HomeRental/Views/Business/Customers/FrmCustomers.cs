@@ -59,7 +59,7 @@ namespace HomeRental.Views.Business.Customers
         private void btnDelete_Click(object sender, EventArgs e)
         {
             var customerSelected = grvCustomer.GetFocusedRow() as CustomerModel;
-            if (customerSelected != null)
+            if (customerSelected != null && MessageBox.Show($"Bạn có muốn xóa khách hàng {customerSelected.Name} không!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 var result = _customerPresenter.DeleteCustomerById(customerSelected.Id.GetValueOrDefault());
                 if (result.Success)
@@ -69,7 +69,7 @@ namespace HomeRental.Views.Business.Customers
                 else if (result.Message != null)
                 {
                     MessageBox.Show("Xóa không thành công!" + "\n" + result.Message, "Thông báo");
-                }    
+                }
             }
         }
 

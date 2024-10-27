@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeRental.IViews.Business.User
 {
-    public interface IUserDetailViews
+    public interface IUserDetailViews : IView
     {
         Guid? Id { get; set; }
         string UserName { get; set; }

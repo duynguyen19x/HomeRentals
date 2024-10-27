@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeRentals.Models.Business
 {
-    public class HomeRentalModel : Entity<Guid>
+    public class HomeRentalModel : Entity<Guid?>
     {
         public string Code { get; set; }
         public string Address { get; set; }

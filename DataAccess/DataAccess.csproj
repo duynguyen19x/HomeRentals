@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dao\AdoNet\Business\CustomerDao.cs" />
+    <Compile Include="Dao\AdoNet\Business\HomeRentalDao.cs" />
     <Compile Include="Dao\AdoNet\Business\UserDao.cs" />
     <Compile Include="Dao\AdoNet\DatabaseHelper.cs" />
     <Compile Include="Dao\AdoNet\Systems\LoginDao.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Dao\AdoNet\DaoFactory.cs" />
     <Compile Include="Dao\EntityFramework\DaoFactory.cs" />
     <Compile Include="IDao\Business\ICustomerDao.cs" />
+    <Compile Include="IDao\Business\IHomeRentalDao.cs" />
     <Compile Include="IDao\Business\IUserDao.cs" />
     <Compile Include="IDao\IDaoFactory.cs" />
     <Compile Include="IDao\Systems\ILoginDao.cs" />
