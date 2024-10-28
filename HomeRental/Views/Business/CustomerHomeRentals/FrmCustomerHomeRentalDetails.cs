@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Mask;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Columns;
@@ -177,13 +178,16 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
             cbbCustomer.Properties.ValueMember = nameof(CustomerModel.Id);
             cbbCustomer.Properties.DisplayMember = nameof(CustomerModel.Code);
 
+            view.Columns.AddField(nameof(CustomerModel.Code));
+            view.Columns.AddField(nameof(CustomerModel.Name));
+            view.BestFitColumns();
+
             var columnCustomer = new GridColumn[]
             {
                 new GridColumn(){ FieldName = nameof(CustomerModel.Code), Caption = "Mã khách hàng", Width = 100 },
                 new GridColumn(){ FieldName = nameof(CustomerModel.Name), Caption = "Tên khách hàng", Width = 300  },
             };
 
-            //view.Columns.AddRange(columnCustomer);
             view.OptionsView.ShowIndicator = false;
             view.OptionsView.ShowGroupPanel = false;
 
@@ -200,6 +204,8 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
                 else
                     gridColumn.Visible = false;
             }
+
+            cbbCustomer.EditValueChanged += CbbCustomer_EditValueChanged;
         }
 
         private void LoadCustomerHomeRentals()
@@ -218,7 +224,9 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
                 new GridColumn(){ FieldName = nameof(CustomerHomeRentalModel.HomeRentalDescription), Caption = "Mô tả nhà", Width = 300  },
             };
 
-            //view.Columns.AddRange(columnCustomer);
+            view.Columns.AddField(nameof(CustomerHomeRentalModel.HomeRentalCode));
+            view.Columns.AddField(nameof(CustomerHomeRentalModel.HomeRentalDescription));
+
             view.OptionsView.ShowIndicator = false;
             view.OptionsView.ShowGroupPanel = false;
 
@@ -235,6 +243,8 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
                 else
                     gridColumn.Visible = false;
             }
+
+            cbbHomeRental.EditValueChanged += CbbHomeRental_EditValueChanged;
         }
 
         private bool BeforeSave()
@@ -267,6 +277,38 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
             }
 
             return isSave;
+        }
+
+        private void CbbCustomer_EditValueChanged(object sender, EventArgs e)
+        {
+            if (e is ChangingEventArgs even)
+            {
+                var customer = Customers?.FirstOrDefault(f => f.Id == (Guid)even.NewValue);
+                if (customer != null)
+                {
+                    CustomerCode = customer.Code;
+                    CustomerName = customer.Name;
+                    return;
+                }
+            }
+
+            CustomerCode = null;
+            CustomerName = null;
+        }
+
+        private void CbbHomeRental_EditValueChanged(object sender, EventArgs e)
+        {
+            //if (e != null && e.NewValue != null)
+            //{
+            //    var customer = Customers?.FirstOrDefault(f => f.Id == (Guid)e.NewValue);
+            //    if (customer != null)
+            //    {
+            //        CustomerCode = customer.Code;
+            //        CustomerName = customer.Name;
+
+            //        return;
+            //    }
+            //}
         }
     }
 }
