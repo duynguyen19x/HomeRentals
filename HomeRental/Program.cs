@@ -1,11 +1,9 @@
-﻿using DevExpress.Entity.Model.Metadata;
+﻿using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
 using HomeRental.Views.Systems;
 using Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace HomeRental
@@ -22,6 +20,11 @@ namespace HomeRental
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            SkinManager.EnableFormSkins();
+            BonusSkins.Register();
+            UserLookAndFeel.Default.SetSkinStyle(System.Configuration.ConfigurationManager.AppSettings["SkinName"].ToString());
+
             Application.Run(new FrmLogin());
         }
     }

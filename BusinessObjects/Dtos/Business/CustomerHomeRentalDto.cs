@@ -20,6 +20,7 @@ namespace BusinessObjects.Dtos.Business
         public string CustomerName { get; set; }
 
         public string HomeRentalCode { get; set; } // Mã nhà
+        public string HomeRentalDescription { get; set; }
         public decimal HomeRentalPrice { get; set; } // Giá thuê
         public decimal HomeRentalArea { get; set; } // Diện tích
         public int HomeRentalFloor { get; set; } // Tầng

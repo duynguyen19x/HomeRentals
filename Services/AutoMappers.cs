@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BusinessObjects.Dtos.Business;
 using BusinessObjects.Entities.Business;
 using BusinessObjects.Entities.Systems;
 using HomeRentals.Models.Business;
@@ -46,6 +47,9 @@ namespace Services
             CreateMap<UserModel, UserEntity>().ReverseMap();
             CreateMap<CustomerModel, CustomerEntity>().ReverseMap();
             CreateMap<HomeRentalModel, HomeRentalEntity>().ReverseMap();
+            CreateMap<CustomerHomeRentalModel, CustomerHomeRentalEntity>().ReverseMap();
+            CreateMap<CustomerHomeRentalModel, CustomerHomeRentalDto>().ReverseMap();
+            CreateMap<CustomerHomeRentalEntity, CustomerHomeRentalDto>().ReverseMap();
         }
     }
 }

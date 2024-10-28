@@ -1,28 +1,49 @@
 ﻿using BusinessObjects.Dtos.Business;
+using BusinessObjects.Entities.Business;
+using HomeRentals.Models.Business;
 using Services.IServices.Business;
+using System;
 using System.Collections.Generic;
 using Utilities;
 
 namespace Services.Services.Business
 {
-    public class CustomerHomeRentalService : ICustomerHomeRentalService
+    public class CustomerHomeRentalService : BaseServices, ICustomerHomeRentalService
     {
         public CustomerHomeRentalService()
         {
         }
 
-        public Result<IList<CustomerHomeRentalDto>> GetCustomerHomeRentalByRenteds()
+        public Result<IList<CustomerHomeRentalModel>> GetAlls(DateTime? fromDate, DateTime? toDate, bool isRented)
         {
-            var result = new Result<IList<CustomerHomeRentalDto>>();
-
-            return result;
+            var sustomerHomeRentals = Factory.CustomerHomeRentalDao.GetAlls(fromDate, toDate, isRented);
+            return new Result<IList<CustomerHomeRentalModel>>()
+            {
+                Items = ObjectMapper.Map<IList<CustomerHomeRentalModel>>(sustomerHomeRentals.Items)
+            };
         }
 
-        public Result<IList<CustomerHomeRentalDto>> GetCustomerHomeRentalByNotRenteds()
+        public Result<Guid> Save(CustomerHomeRentalModel customerHomeRental)
         {
-            var result = new Result<IList<CustomerHomeRentalDto>>();
+            var customerHomeRentalEntity = ObjectMapper.Map<CustomerHomeRentalEntity>(customerHomeRental);
+            return Factory.CustomerHomeRentalDao.Save(customerHomeRentalEntity);
+        }
 
-            return result;
+        public Result<CustomerHomeRentalModel> GetById(Guid id)
+        {
+            var result = Factory.CustomerHomeRentalDao.GetById(id);
+
+            return new Result<CustomerHomeRentalModel>()
+            {
+                Success = result.Success,
+                Message = result.Message,
+                Items = ObjectMapper.Map<CustomerHomeRentalModel>(result.Items)
+            };
+        }
+
+        public Result<bool> DeleteById(Guid id)
+        {
+            return Factory.CustomerHomeRentalDao.DeleteById(id);
         }
     }
 }

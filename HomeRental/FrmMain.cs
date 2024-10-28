@@ -1,12 +1,15 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
 using HomeRental.Presenters.Systems;
+using HomeRental.Views.Business.CustomerHomeRentals;
 using HomeRental.Views.Business.Customers;
 using HomeRental.Views.Business.HomeRentals;
 using HomeRental.Views.Business.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -102,9 +105,23 @@ namespace HomeRental
             TabCreate(frm);
         }
 
-        private void skinRibbonGalleryBarItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnCustomerHomeRental_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            var frm = new FrmCustomerHomeRentals();
+            TabCreate(frm);
+        }
 
+        private void skinRibbonGalleryBarItem_GalleryItemClick(object sender, DevExpress.XtraBars.Ribbon.GalleryItemClickEventArgs e)
+        {
+            if (e != null && e.Item != null && e.Item.Value != null)
+            {
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                config.AppSettings.Settings.Remove("SkinName");
+                //config.AppSettings.Settings.Add("SkinName", UserLookAndFeel.Default.ActiveSkinName);
+                config.AppSettings.Settings.Add("SkinName", e.Item.Value.ToString());
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("appSettings");
+            }
         }
 
         #endregion

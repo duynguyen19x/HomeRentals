@@ -10,5 +10,6 @@ namespace DataAccess.IDao
         IUserDao UserDao { get; }
         ICustomerDao CustomerDao { get; }
         IHomeRentalDao HomeRentalDao { get; }
+        ICustomerHomeRentalDao CustomerHomeRentalDao { get; }
     }
 }

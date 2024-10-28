@@ -1,4 +1,6 @@
 ﻿using BusinessObjects.Dtos.Business;
+using BusinessObjects.Entities.Business;
+using HomeRentals.Models.Business;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,9 @@ namespace Services.IServices.Business
 {
     public interface ICustomerHomeRentalService
     {
-        Result<IList<CustomerHomeRentalDto>> GetCustomerHomeRentalByRenteds();
-        Result<IList<CustomerHomeRentalDto>> GetCustomerHomeRentalByNotRenteds();
+        Result<IList<CustomerHomeRentalModel>> GetAlls(DateTime? fromDate, DateTime? toDate, bool isRented);
+        Result<Guid> Save(CustomerHomeRentalModel customerHomeRental);
+        Result<CustomerHomeRentalModel> GetById(Guid id);
+        Result<bool> DeleteById(Guid id);
     }
 }

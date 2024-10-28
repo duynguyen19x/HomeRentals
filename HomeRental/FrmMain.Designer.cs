@@ -41,14 +41,14 @@
             this.btnRestore = new DevExpress.XtraBars.BarButtonItem();
             this.btnBackup = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCustomerHomeRental = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rplUserGrpup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
@@ -56,10 +56,10 @@
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(45, 44, 45, 44);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
+            this.ribbonControl1.SearchEditItem,
             this.btnUser,
             this.barButtonItem1,
             this.barButtonItem2,
@@ -71,17 +71,15 @@
             this.btnRestore,
             this.btnBackup,
             this.skinRibbonGalleryBarItem,
-            this.barButtonItem5});
+            this.btnCustomerHomeRental});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
             this.ribbonControl1.MaxItemId = 13;
             this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.OptionsMenuMinWidth = 495;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage3,
             this.ribbonPage2});
-            this.ribbonControl1.Size = new System.Drawing.Size(1764, 231);
+            this.ribbonControl1.Size = new System.Drawing.Size(1176, 158);
             // 
             // btnUser
             // 
@@ -170,14 +168,15 @@
             this.skinRibbonGalleryBarItem.Caption = "Giao diện";
             this.skinRibbonGalleryBarItem.Id = 11;
             this.skinRibbonGalleryBarItem.Name = "skinRibbonGalleryBarItem";
-            this.skinRibbonGalleryBarItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.skinRibbonGalleryBarItem_ItemClick);
+            this.skinRibbonGalleryBarItem.GalleryItemClick += new DevExpress.XtraBars.Ribbon.GalleryItemClickEventHandler(this.skinRibbonGalleryBarItem_GalleryItemClick);
             // 
-            // barButtonItem5
+            // btnCustomerHomeRental
             // 
-            this.barButtonItem5.Caption = "Thuê nhà";
-            this.barButtonItem5.Id = 12;
-            this.barButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.btnCustomerHomeRental.Caption = "Thuê nhà";
+            this.btnCustomerHomeRental.Id = 12;
+            this.btnCustomerHomeRental.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.btnCustomerHomeRental.Name = "btnCustomerHomeRental";
+            this.btnCustomerHomeRental.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomerHomeRental_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -194,6 +193,19 @@
             this.rplUserGrpup.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
             this.rplUserGrpup.Name = "rplUserGrpup";
             this.rplUserGrpup.Text = "Quản lý người dùng";
+            // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "Nhà cho thuê";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnCustomerHomeRental);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Quản lý nhà cho thuê";
             // 
             // ribbonPage2
             // 
@@ -217,38 +229,23 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Giao diện";
             // 
-            // ribbonPage3
-            // 
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "Nhà cho thuê";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Quản lý nhà cho thuê";
-            // 
             // xtraTabControl
             // 
             this.xtraTabControl.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
             this.xtraTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl.Location = new System.Drawing.Point(0, 231);
-            this.xtraTabControl.Margin = new System.Windows.Forms.Padding(4);
+            this.xtraTabControl.Location = new System.Drawing.Point(0, 158);
             this.xtraTabControl.Name = "xtraTabControl";
-            this.xtraTabControl.Size = new System.Drawing.Size(1764, 713);
+            this.xtraTabControl.Size = new System.Drawing.Size(1176, 488);
             this.xtraTabControl.TabIndex = 3;
             this.xtraTabControl.CloseButtonClick += new System.EventHandler(this.xtraTabControl_CloseButtonClick);
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1764, 944);
+            this.ClientSize = new System.Drawing.Size(1176, 646);
             this.Controls.Add(this.xtraTabControl);
             this.Controls.Add(this.ribbonControl1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMain";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -282,7 +279,7 @@
         private DevExpress.XtraBars.BarButtonItem btnBackup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem btnCustomerHomeRental;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
