@@ -14,6 +14,7 @@ namespace DataAccess.Dao.AdoNet
     public class DaoFactory : IDaoFactory
     {
         public ILoginDao LoginDao => new LoginDao();
+        public ILogoutDao LogoutDao => new LogoutDao();
         public IUserDao UserDao => new UserDao();
         public ICustomerDao CustomerDao => new CustomerDao();
         public IHomeRentalDao HomeRentalDao => new HomeRentalDao();

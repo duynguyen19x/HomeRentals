@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
+using HomeRental.Presenters.Systems;
 using HomeRental.Views.Business.Customers;
 using HomeRental.Views.Business.HomeRentals;
 using HomeRental.Views.Business.Users;
@@ -11,20 +12,25 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace HomeRental
 {
     public partial class FrmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        LogoutPresenter _logoutPresenter;
+
         public FrmMain()
         {
             InitializeComponent();
+            _logoutPresenter = new LogoutPresenter();
         }
 
         #region Function
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
+            _logoutPresenter.CloseConnectDatabase();
             Application.Exit();
         }
 
@@ -96,11 +102,11 @@ namespace HomeRental
             TabCreate(frm);
         }
 
-        #endregion
-
         private void skinRibbonGalleryBarItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }
+
+        #endregion
     }
 }

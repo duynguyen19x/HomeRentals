@@ -12,6 +12,7 @@ namespace DataAccess.Dao.EntityFramework
     public class DaoFactory : IDaoFactory
     {
         public ILoginDao LoginDao => throw new NotImplementedException();
+        public ILogoutDao LogoutDao => throw new NotImplementedException();
 
         public IUserDao UserDao => throw new NotImplementedException();
 

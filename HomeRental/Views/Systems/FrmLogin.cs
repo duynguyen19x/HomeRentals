@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities;
+using Utilities.Commons;
 
 namespace HomeRental.Views.Systems
 {
@@ -21,10 +22,12 @@ namespace HomeRental.Views.Systems
         {
             InitializeComponent();
             _loginPresenter = new LoginPresenter(this);
+            _logoutPresenter = new LogoutPresenter();
         }
 
         #region Member
-        public LoginPresenter _loginPresenter { get; set; }
+        LoginPresenter _loginPresenter;
+        LogoutPresenter _logoutPresenter;
 
         public string UserName
         {
@@ -43,6 +46,8 @@ namespace HomeRental.Views.Systems
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
+            CursorState.SetBusyState();
+
             var serverName = string.Empty;
             var databaseName = string.Empty;
             var userName = string.Empty;
@@ -84,6 +89,7 @@ namespace HomeRental.Views.Systems
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            _logoutPresenter.CloseConnectDatabase();
             Application.Exit();
         }
 
@@ -96,5 +102,11 @@ namespace HomeRental.Views.Systems
         }
 
         #endregion
+
+        private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _logoutPresenter.CloseConnectDatabase();
+            Application.Exit();
+        }
     }
 }

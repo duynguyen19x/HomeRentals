@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnSetupDatabase = new DevExpress.XtraEditors.SimpleButton();
             this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.txtUserName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btnSetupDatabase = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
@@ -53,87 +53,90 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(339, 125);
+            this.groupControl1.Size = new System.Drawing.Size(508, 183);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Đăng nhập hệ thống";
             // 
+            // btnSetupDatabase
+            // 
+            this.btnSetupDatabase.Location = new System.Drawing.Point(21, 134);
+            this.btnSetupDatabase.Margin = new System.Windows.Forms.Padding(8, 15, 8, 4);
+            this.btnSetupDatabase.Name = "btnSetupDatabase";
+            this.btnSetupDatabase.Size = new System.Drawing.Size(134, 34);
+            this.btnSetupDatabase.TabIndex = 6;
+            this.btnSetupDatabase.Text = "Kết nối CSDL";
+            this.btnSetupDatabase.Click += new System.EventHandler(this.btnSetupDatabase_Click);
+            // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(165, 92);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(5, 10, 5, 3);
+            this.btnLogin.Location = new System.Drawing.Point(248, 134);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(8, 15, 8, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(112, 34);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(250, 92);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnCancel.Location = new System.Drawing.Point(375, 134);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(112, 34);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(99, 59);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtPassword.Location = new System.Drawing.Point(148, 86);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Properties.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(226, 20);
+            this.txtPassword.Size = new System.Drawing.Size(339, 26);
             this.txtPassword.TabIndex = 3;
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(99, 33);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtUserName.Location = new System.Drawing.Point(148, 48);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(226, 20);
+            this.txtUserName.Size = new System.Drawing.Size(339, 26);
             this.txtUserName.TabIndex = 2;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(17, 62);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.labelControl2.Location = new System.Drawing.Point(26, 91);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(12, 4, 4, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(48, 13);
+            this.labelControl2.Size = new System.Drawing.Size(70, 19);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Mật khẩu:";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(17, 36);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.labelControl1.Location = new System.Drawing.Point(26, 53);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(12, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(76, 13);
+            this.labelControl1.Size = new System.Drawing.Size(113, 19);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Tên đăng nhập:";
             // 
-            // btnSetupDatabase
-            // 
-            this.btnSetupDatabase.Location = new System.Drawing.Point(14, 92);
-            this.btnSetupDatabase.Margin = new System.Windows.Forms.Padding(5, 10, 5, 3);
-            this.btnSetupDatabase.Name = "btnSetupDatabase";
-            this.btnSetupDatabase.Size = new System.Drawing.Size(89, 23);
-            this.btnSetupDatabase.TabIndex = 6;
-            this.btnSetupDatabase.Text = "Kết nối CSDL";
-            this.btnSetupDatabase.Click += new System.EventHandler(this.btnSetupDatabase_Click);
-            // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 125);
+            this.ClientSize = new System.Drawing.Size(508, 183);
             this.Controls.Add(this.groupControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmLogin_FormClosed);
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);

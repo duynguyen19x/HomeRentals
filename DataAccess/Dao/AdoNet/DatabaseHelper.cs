@@ -30,6 +30,12 @@ namespace DataAccess.Dao.AdoNet
             }
         }
 
+        public static void CloseConnection()
+        {
+            if (connection != null && connection.State == ConnectionState.Open)
+                connection.Close();
+        }
+
         // Hàm gọi Stored Procedure không trả về dữ liệu (INSERT, UPDATE, DELETE)
         public static int ExecuteStoredProcedure<T>(string storedProcedureName, T parameters)
         {

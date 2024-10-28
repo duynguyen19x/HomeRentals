@@ -49,6 +49,7 @@
     <Compile Include="Dao\AdoNet\Business\UserDao.cs" />
     <Compile Include="Dao\AdoNet\DatabaseHelper.cs" />
     <Compile Include="Dao\AdoNet\Systems\LoginDao.cs" />
+    <Compile Include="Dao\AdoNet\Systems\LogoutDao.cs" />
     <Compile Include="Dao\Common.cs" />
     <Compile Include="Dao\DaoFactories.cs" />
     <Compile Include="Dao\AdoNet\DaoFactory.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="IDao\Business\IUserDao.cs" />
     <Compile Include="IDao\IDaoFactory.cs" />
     <Compile Include="IDao\Systems\ILoginDao.cs" />
+    <Compile Include="IDao\Systems\ILogoutDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
