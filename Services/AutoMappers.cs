@@ -1,13 +1,9 @@
 ﻿using AutoMapper;
-using BusinessObjects.Business;
-using BusinessObjects.Systems;
+using BusinessObjects.Entities.Business;
+using BusinessObjects.Entities.Systems;
 using HomeRentals.Models.Business;
 using HomeRentals.Models.Systems;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services
 {

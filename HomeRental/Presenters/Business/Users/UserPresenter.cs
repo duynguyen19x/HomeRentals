@@ -17,14 +17,14 @@ namespace HomeRental.Presenters.Business.User
             _userService = new UserService();
         }
 
-        public Result<IList<UserModel>> GetUsers()
+        public Result<IList<UserModel>> GetAlls()
         {
-            return _userService.GetUsers();
+            return _userService.GetAlls();
         }
 
-        public Result<bool> DeleteUserById(Guid id)
+        public Result<bool> DeleteById(Guid id)
         {
-            return _userService.DeleteUserById(id);
+            return _userService.DeleteById(id);
         }
     }
 }

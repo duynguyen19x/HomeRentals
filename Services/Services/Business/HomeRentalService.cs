@@ -1,12 +1,8 @@
-﻿using BusinessObjects.Business;
-using DataAccess.Dao.AdoNet;
+﻿using BusinessObjects.Entities.Business;
 using HomeRentals.Models.Business;
 using Services.IServices.Business;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Utilities;
 
 namespace Services.Services.Business

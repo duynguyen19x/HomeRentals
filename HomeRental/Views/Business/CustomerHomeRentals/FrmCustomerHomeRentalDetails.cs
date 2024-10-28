@@ -49,7 +49,7 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
         private void InitData()
         {
             if (Customers == null)
-                Customers = _customerPresenter.GetCustomers().Items;
+                Customers = _customerPresenter.GetAlls().Items;
 
             LoadCustomer();
         }

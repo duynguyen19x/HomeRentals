@@ -1,19 +1,15 @@
-﻿using BusinessObjects.Business;
-using HomeRentals.Models.Business;
+﻿using HomeRentals.Models.Business;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Utilities;
 
 namespace Services.IServices.Business
 {
     public interface IUserService
     {
-        Result<IList<UserModel>> GetUsers();
+        Result<IList<UserModel>> GetAlls();
         Result<Guid> Save(UserModel user);
-        Result<UserModel> GetUserById(Guid id);
-        Result<bool> DeleteUserById(Guid id);
+        Result<UserModel> GetById(Guid id);
+        Result<bool> DeleteById(Guid id);
     }
 }

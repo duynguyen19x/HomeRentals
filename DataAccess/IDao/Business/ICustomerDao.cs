@@ -1,19 +1,15 @@
-﻿using BusinessObjects.Business;
-using DataAccess.Dao.AdoNet;
+﻿using BusinessObjects.Entities.Business;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Utilities;
 
 namespace DataAccess.IDao.Business
 {
     public interface ICustomerDao
     {
-        Result<IList<CustomerEntity>> GetCustomers();
+        Result<IList<CustomerEntity>> GetAlls();
         Result<Guid> Save(CustomerEntity customer);
-        Result<bool> DeleteCustomerById(Guid id);
-        Result<CustomerEntity> GetCustomerById(Guid id);
+        Result<bool> DeleteById(Guid id);
+        Result<CustomerEntity> GetById(Guid id);
     }
 }

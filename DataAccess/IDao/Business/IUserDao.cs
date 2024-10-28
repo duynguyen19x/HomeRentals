@@ -1,4 +1,4 @@
-﻿using BusinessObjects.Business;
+﻿using BusinessObjects.Entities.Business;
 using System;
 using System.Collections.Generic;
 using Utilities;
@@ -7,9 +7,9 @@ namespace DataAccess.IDao.Business
 {
     public interface IUserDao
     {
-        Result<IList<UserEntity>> GetUsers();
+        Result<IList<UserEntity>> GetAlls();
         Result<Guid> Save(UserEntity user);
-        Result<UserEntity> GetUserById(Guid id);
-        Result<bool> DeleteUserById(Guid id);
+        Result<UserEntity> GetById(Guid id);
+        Result<bool> DeleteById(Guid id);
     }
 }

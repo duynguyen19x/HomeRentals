@@ -1,9 +1,4 @@
-﻿using BusinessObjects.Systems;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BusinessObjects.Entities.Systems;
 using Utilities;
 
 namespace DataAccess.IDao.Systems

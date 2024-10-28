@@ -10,9 +10,9 @@ namespace Services.IServices.Business
 {
     public interface ICustomerService
     {
-        Result<IList<CustomerModel>> GetCustomers();
+        Result<IList<CustomerModel>> GetAlls();
         Result<Guid> Save(CustomerModel Customer);
-        Result<CustomerModel> GetCustomerById(Guid id);
-        Result<bool> DeleteCustomerById(Guid id);
+        Result<CustomerModel> GetById(Guid id);
+        Result<bool> DeleteById(Guid id);
     }
 }

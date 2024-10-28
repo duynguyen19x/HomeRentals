@@ -1,35 +1,32 @@
-﻿using BusinessObjects.Business;
+﻿using BusinessObjects.Entities.Business;
 using HomeRentals.Models.Business;
 using Services.IServices.Business;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Utilities;
 
 namespace Services.Services.Business
 {
     public class CustomerService : BaseServices, ICustomerService
     {
-        public Result<IList<CustomerModel>> GetCustomers()
+        public Result<IList<CustomerModel>> GetAlls()
         {
-            var Customers = Factory.CustomerDao.GetCustomers();
+            var Customers = Factory.CustomerDao.GetAlls();
             return new Result<IList<CustomerModel>>()
             {
                 Items = ObjectMapper.Map<IList<CustomerModel>>(Customers.Items)
             };
         }
 
-        public Result<Guid> Save(CustomerModel Customer)
+        public Result<Guid> Save(CustomerModel customer)
         {
-            var CustomerEntity = ObjectMapper.Map<CustomerEntity>(Customer);
-            return Factory.CustomerDao.Save(CustomerEntity);
+            var customerEntity = ObjectMapper.Map<CustomerEntity>(customer);
+            return Factory.CustomerDao.Save(customerEntity);
         }
 
-        public Result<CustomerModel> GetCustomerById(Guid id)
+        public Result<CustomerModel> GetById(Guid id)
         {
-            var result = Factory.CustomerDao.GetCustomerById(id);
+            var result = Factory.CustomerDao.GetById(id);
 
             return new Result<CustomerModel>()
             {
@@ -39,9 +36,9 @@ namespace Services.Services.Business
             };
         }
 
-        public Result<bool> DeleteCustomerById(Guid id)
+        public Result<bool> DeleteById(Guid id)
         {
-            return Factory.CustomerDao.DeleteCustomerById(id);
+            return Factory.CustomerDao.DeleteById(id);
         }
     }
 }

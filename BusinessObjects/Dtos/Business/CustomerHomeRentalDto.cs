@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeRentals.Models.Business
+namespace BusinessObjects.Dtos.Business
 {
-    public class CustomerHomeRentalModel : Entity<Guid?>
+    public class CustomerHomeRentalDto : Entity<Guid?>
     {
         public string CustomerHomeRentalCode { get; set; }
 

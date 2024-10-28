@@ -51,6 +51,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.rdoRented = new System.Windows.Forms.RadioButton();
             this.rdoNotRented = new System.Windows.Forms.RadioButton();
+            this.btnCheckOut = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomerHomeRental)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcCustomerHomeRental)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteFromDate.Properties)).BeginInit();
@@ -333,11 +334,23 @@
             this.rdoNotRented.Text = "Chưa thuê";
             this.rdoNotRented.UseVisualStyleBackColor = true;
             // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCheckOut.Location = new System.Drawing.Point(892, 13);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(112, 34);
+            this.btnCheckOut.TabIndex = 25;
+            this.btnCheckOut.Text = "Trả nhà";
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
+            // 
             // FrmCustomerHomeRentals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1404, 631);
+            this.Controls.Add(this.btnCheckOut);
             this.Controls.Add(this.rdoNotRented);
             this.Controls.Add(this.rdoRented);
             this.Controls.Add(this.dateEdit1);
@@ -391,5 +404,6 @@
         private System.Windows.Forms.RadioButton rdoNotRented;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraEditors.SimpleButton btnCheckOut;
     }
 }

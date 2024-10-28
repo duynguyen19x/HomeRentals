@@ -87,7 +87,7 @@ namespace HomeRental.Views.Business.Users
         {
             if (Action == ActionModeType.Edit && Id != null)
             {
-                var result = _userDetailPresenter.GetUserById(Id.GetValueOrDefault());
+                var result = _userDetailPresenter.GetById(Id.GetValueOrDefault());
                 if (result.Items != null)
                 {
                     Id = result.Items.Id;

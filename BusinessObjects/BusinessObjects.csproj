@@ -41,14 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\CustomerEntity.cs" />
-    <Compile Include="Business\CustomerHomeRentalEntity.cs" />
-    <Compile Include="Business\HomeRentalEntity.cs" />
-    <Compile Include="Business\UserEntity.cs" />
+    <Compile Include="Dtos\Business\CustomerHomeRentalDto.cs" />
+    <Compile Include="Entities\Business\CustomerEntity.cs" />
+    <Compile Include="Entities\Business\CustomerHomeRentalEntity.cs" />
+    <Compile Include="Entities\Business\HomeRentalEntity.cs" />
+    <Compile Include="Entities\Business\UserEntity.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Systems\ConnectionEntity.cs" />
-    <Compile Include="Systems\LoginEntity.cs" />
+    <Compile Include="Entities\Systems\ConnectionEntity.cs" />
+    <Compile Include="Entities\Systems\LoginEntity.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

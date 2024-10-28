@@ -60,7 +60,7 @@ namespace HomeRental.Views.Business.Customers
         {
             if (Action == ActionModeType.Edit && Id != null)
             {
-                var result = _customerDetailPresenter.GetCustomerById(Id.GetValueOrDefault());
+                var result = _customerDetailPresenter.GetById(Id.GetValueOrDefault());
                 if (result.Items != null)
                 {
                     Id = result.Items.Id;

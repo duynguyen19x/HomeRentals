@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessObjects.Business
+namespace BusinessObjects.Entities.Business
 {
     public class HomeRentalEntity: Entity<Guid>
     {

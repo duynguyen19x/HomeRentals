@@ -18,14 +18,14 @@ namespace HomeRental.Presenters.Business.Customer
             _customerService = new CustomerService();
         }
 
-        public Result<IList<CustomerModel>> GetCustomers()
+        public Result<IList<CustomerModel>> GetAlls()
         {
-            return _customerService.GetCustomers();
+            return _customerService.GetAlls();
         }
 
-        public Result<bool> DeleteCustomerById(Guid id)
+        public Result<bool> DeleteById(Guid id)
         {
-            return _customerService.DeleteCustomerById(id);
+            return _customerService.DeleteById(id);
         }
     }
 }

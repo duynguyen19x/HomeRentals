@@ -54,6 +54,11 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
         {
 
         }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
     }
 }

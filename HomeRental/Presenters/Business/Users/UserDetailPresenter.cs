@@ -20,9 +20,9 @@ namespace HomeRental.Presenters.Business.User
             _userService = new UserService();
         }
 
-        public Result<UserModel> GetUserById(Guid id)
+        public Result<UserModel> GetById(Guid id)
         {
-            return _userService.GetUserById(id);
+            return _userService.GetById(id);
         }
 
         public Result<Guid> Save()

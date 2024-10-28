@@ -61,7 +61,7 @@ namespace HomeRental.Views.Business.Customers
             var customerSelected = grvCustomer.GetFocusedRow() as CustomerModel;
             if (customerSelected != null && MessageBox.Show($"Bạn có muốn xóa khách hàng {customerSelected.Name} không!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                var result = _customerPresenter.DeleteCustomerById(customerSelected.Id.GetValueOrDefault());
+                var result = _customerPresenter.DeleteById(customerSelected.Id.GetValueOrDefault());
                 if (result.Success)
                 {
                     LoadData();
@@ -85,7 +85,7 @@ namespace HomeRental.Views.Business.Customers
 
         private void LoadData()
         {
-            Customers = _customerPresenter.GetCustomers().Items;
+            Customers = _customerPresenter.GetAlls().Items;
         }
     }
 }

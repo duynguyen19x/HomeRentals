@@ -1,17 +1,15 @@
-﻿using BusinessObjects.Business;
+﻿using BusinessObjects.Entities.Business;
 using DataAccess.IDao.Business;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Utilities;
 
 namespace DataAccess.Dao.AdoNet.Business
 {
     public class CustomerDao : ICustomerDao
     {
-        public Result<IList<CustomerEntity>> GetCustomers()
+        public Result<IList<CustomerEntity>> GetAlls()
         {
             var result = new Result<IList<CustomerEntity>>();
 
@@ -28,7 +26,7 @@ namespace DataAccess.Dao.AdoNet.Business
             return result;
         }
 
-        public Result<CustomerEntity> GetCustomerById(Guid id)
+        public Result<CustomerEntity> GetById(Guid id)
         {
             var result = new Result<CustomerEntity>();
 
@@ -62,7 +60,7 @@ namespace DataAccess.Dao.AdoNet.Business
             return result;
         }
 
-        public Result<bool> DeleteCustomerById(Guid id)
+        public Result<bool> DeleteById(Guid id)
         {
             var result = new Result<bool>();
 

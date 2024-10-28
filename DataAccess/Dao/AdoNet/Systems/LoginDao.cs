@@ -1,12 +1,7 @@
-﻿using BusinessObjects.Business;
-using BusinessObjects.Systems;
+﻿using BusinessObjects.Entities.Business;
+using BusinessObjects.Entities.Systems;
 using DataAccess.IDao.Systems;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Utilities;
 
 namespace DataAccess.Dao.AdoNet.Systems

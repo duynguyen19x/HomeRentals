@@ -62,7 +62,7 @@ namespace HomeRental.Views.Business.Users
             var customerSelected = grvUsers.GetFocusedRow() as CustomerModel;
             if (customerSelected != null)
             {
-                var result = _userPresenter.DeleteUserById(customerSelected.Id.GetValueOrDefault());
+                var result = _userPresenter.DeleteById(customerSelected.Id.GetValueOrDefault());
                 if (result.Success)
                 {
                     LoadData();
@@ -81,7 +81,7 @@ namespace HomeRental.Views.Business.Users
 
         private void LoadData()
         {
-            Users = _userPresenter.GetUsers().Items;
+            Users = _userPresenter.GetAlls().Items;
         }
         #endregion
 

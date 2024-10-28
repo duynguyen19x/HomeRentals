@@ -1,21 +1,17 @@
-﻿using BusinessObjects.Business;
-using BusinessObjects.Systems;
+﻿using BusinessObjects.Entities.Business;
 using HomeRentals.Models.Business;
 using Services.IServices.Business;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Utilities;
 
 namespace Services.Services.Business
 {
     public class UserService : BaseServices, IUserService
     {
-        public Result<IList<UserModel>> GetUsers()
+        public Result<IList<UserModel>> GetAlls()
         {
-            var users = Factory.UserDao.GetUsers();
+            var users = Factory.UserDao.GetAlls();
             return new Result<IList<UserModel>>()
             {
                 Items = ObjectMapper.Map<IList<UserModel>>(users.Items)
@@ -28,9 +24,9 @@ namespace Services.Services.Business
             return Factory.UserDao.Save(userEntity);
         }
 
-        public Result<UserModel> GetUserById(Guid id)
+        public Result<UserModel> GetById(Guid id)
         {
-            var result = Factory.UserDao.GetUserById(id);
+            var result = Factory.UserDao.GetById(id);
 
             return new Result<UserModel>()
             {
@@ -40,9 +36,9 @@ namespace Services.Services.Business
             };
         }
 
-        public Result<bool> DeleteUserById(Guid id)
+        public Result<bool> DeleteById(Guid id)
         {
-            return Factory.UserDao.DeleteUserById(id);
+            return Factory.UserDao.DeleteById(id);
         }
     }
 }
