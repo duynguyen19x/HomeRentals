@@ -73,6 +73,11 @@ namespace HomeRental.Views.Business.Customers
             }
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
         private void FrmCustomers_Load(object sender, EventArgs e)
         {
             LoadData();

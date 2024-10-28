@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\CustomerHomeRentalModel.cs" />
     <Compile Include="Business\CustomerModel.cs" />
     <Compile Include="Business\HomeRentalModel.cs" />
     <Compile Include="Business\UserModel.cs" />

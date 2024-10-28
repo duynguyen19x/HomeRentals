@@ -13,7 +13,7 @@ namespace BusinessObjects.Business
     public class CustomerHomeRentalEntity : Entity<Guid>
     {
         public Guid? CustomerId { get; set; }
-        public Guid? RentalPropertyId { get; set; }
+        public Guid? HomeRentalId { get; set; }
 
         public DateTime RentalStartDate { get; set; } // Ngày bắt đầ thuê
         public DateTime RentalEndDate { get; set; } // Ngày hết hạn thuê

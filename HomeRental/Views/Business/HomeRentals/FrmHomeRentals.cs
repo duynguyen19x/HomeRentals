@@ -84,5 +84,10 @@ namespace HomeRental.Views.Business.HomeRentals
         {
             HomeRentals = _homeRentalPresenter.GetAlls().Items;
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }

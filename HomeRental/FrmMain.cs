@@ -97,5 +97,10 @@ namespace HomeRental
         }
 
         #endregion
+
+        private void skinRibbonGalleryBarItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

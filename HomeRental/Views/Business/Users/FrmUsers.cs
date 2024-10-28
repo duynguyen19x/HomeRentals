@@ -74,10 +74,16 @@ namespace HomeRental.Views.Business.Users
             }
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
         private void LoadData()
         {
             Users = _userPresenter.GetUsers().Items;
         }
         #endregion
+
     }
 }
