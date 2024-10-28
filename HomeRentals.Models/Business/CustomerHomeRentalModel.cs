@@ -8,6 +8,8 @@ namespace HomeRentals.Models.Business
 {
     public class CustomerHomeRentalModel : Entity<Guid?>
     {
+        public string CustomerHomeRentalCode { get; set; }
+
         public Guid? CustomerId { get; set; }
         public Guid? HomeRentalId { get; set; }
 

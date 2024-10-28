@@ -40,6 +40,8 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grcCustomerHomeRental = new DevExpress.XtraGrid.GridControl();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.rdoRented = new System.Windows.Forms.RadioButton();
             this.rdoNotRented = new System.Windows.Forms.RadioButton();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvCustomerHomeRental)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcCustomerHomeRental)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteFromDate.Properties)).BeginInit();
@@ -142,7 +142,7 @@
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 157;
+            this.gridColumn1.Width = 129;
             // 
             // gridColumn2
             // 
@@ -153,7 +153,7 @@
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 208;
+            this.gridColumn2.Width = 163;
             // 
             // gridColumn3
             // 
@@ -164,7 +164,7 @@
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 451;
+            this.gridColumn3.Width = 172;
             // 
             // gridColumn4
             // 
@@ -175,7 +175,7 @@
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 178;
+            this.gridColumn4.Width = 320;
             // 
             // gridColumn5
             // 
@@ -187,7 +187,7 @@
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 133;
+            this.gridColumn5.Width = 152;
             // 
             // gridColumn6
             // 
@@ -199,7 +199,28 @@
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 157;
+            this.gridColumn6.Width = 130;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Tầng";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn7.FieldName = "HomeRentalFloor";
+            this.gridColumn7.MinWidth = 30;
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.Width = 101;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Hướng";
+            this.gridColumn8.FieldName = "HomeRentalFacingName";
+            this.gridColumn8.MinWidth = 30;
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.Width = 163;
             // 
             // grcCustomerHomeRental
             // 
@@ -311,27 +332,6 @@
             this.rdoNotRented.TabIndex = 24;
             this.rdoNotRented.Text = "Chưa thuê";
             this.rdoNotRented.UseVisualStyleBackColor = true;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "Tầng";
-            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn7.FieldName = "HomeRentalFloor";
-            this.gridColumn7.MinWidth = 30;
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
-            this.gridColumn7.Width = 112;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Hướng";
-            this.gridColumn8.FieldName = "HomeRentalFacingName";
-            this.gridColumn8.MinWidth = 30;
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
-            this.gridColumn8.Width = 112;
             // 
             // FrmCustomerHomeRentals
             // 

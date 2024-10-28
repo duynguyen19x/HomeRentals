@@ -25,7 +25,7 @@ namespace Utilities.Commons
             if (isBusy != _isBusy)
             {
                 _isBusy = isBusy;
-                Cursor.Current = isBusy ? Cursors.WaitCursor : Cursors.Default;
+                Cursor.Current = isBusy ? Cursors.WaitCursor : Cursors.Arrow;
 
                 if (_isBusy)
                 {
