@@ -12,7 +12,7 @@ namespace DataAccess.IDao.Business
 {
     public interface ICustomerHomeRentalDao
     {
-        Result<IList<CustomerHomeRentalDto>> GetAlls(DateTime? fromDate, DateTime? toDate, bool isRented);
+        Result<IList<CustomerHomeRentalDto>> GetAlls(DateTime? fromDate, DateTime? toDate, int rented, Guid? customerHomeRentalCurrentId);
         Result<CustomerHomeRentalDto> GetById(Guid id);
         Result<Guid> Save(CustomerHomeRentalEntity customerHomeRental);
         Result<bool> DeleteById(Guid id);

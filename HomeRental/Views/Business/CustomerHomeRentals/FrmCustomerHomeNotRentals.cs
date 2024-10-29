@@ -43,7 +43,7 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
 
         private void LoadData()
         {
-            CustomerHomeRentals = _customerHomeRentalPresenter.GetAlls(null, null, false).Items;
+            CustomerHomeRentals = _customerHomeRentalPresenter.GetAlls(null, null, 0, null).Items;
         }
         #endregion
     }

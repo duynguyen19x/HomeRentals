@@ -21,9 +21,9 @@ namespace HomeRental.Presenters.Business.CustomerHomeRentals
             _customerHomeRentalService = new CustomerHomeRentalService();
         }
 
-        public Result<IList<CustomerHomeRentalModel>> GetAlls(DateTime? fromDate, DateTime? toDate, bool isRented)
+        public Result<IList<CustomerHomeRentalModel>> GetAlls(DateTime? fromDate, DateTime? toDate, int rented, Guid? customerHomeRentalCurrentId)
         {
-            return _customerHomeRentalService.GetAlls(fromDate, toDate, isRented);
+            return _customerHomeRentalService.GetAlls(fromDate, toDate, rented, customerHomeRentalCurrentId);
         }
 
         public Result<bool> DeleteById(Guid id)

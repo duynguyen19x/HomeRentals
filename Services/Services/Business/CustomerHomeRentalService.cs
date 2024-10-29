@@ -14,9 +14,9 @@ namespace Services.Services.Business
         {
         }
 
-        public Result<IList<CustomerHomeRentalModel>> GetAlls(DateTime? fromDate, DateTime? toDate, bool isRented)
+        public Result<IList<CustomerHomeRentalModel>> GetAlls(DateTime? fromDate, DateTime? toDate, int rented, Guid? customerHomeRentalCurrentId)
         {
-            var sustomerHomeRentals = Factory.CustomerHomeRentalDao.GetAlls(fromDate, toDate, isRented);
+            var sustomerHomeRentals = Factory.CustomerHomeRentalDao.GetAlls(fromDate, toDate, rented, customerHomeRentalCurrentId);
             return new Result<IList<CustomerHomeRentalModel>>()
             {
                 Items = ObjectMapper.Map<IList<CustomerHomeRentalModel>>(sustomerHomeRentals.Items)

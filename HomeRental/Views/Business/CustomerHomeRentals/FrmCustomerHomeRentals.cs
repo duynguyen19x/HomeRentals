@@ -123,7 +123,17 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
 
         private void LoadData()
         {
-            CustomerHomeRentals = _customerHomeRentalPresenter.GetAlls(FromDate, ToDate, true).Items;
+            CustomerHomeRentals = _customerHomeRentalPresenter.GetAlls(FromDate, ToDate, 1, null).Items;
+        }
+
+        private void rdoRented_CheckedChanged(object sender, EventArgs e)
+        {
+            CustomerHomeRentals = _customerHomeRentalPresenter.GetAlls(FromDate, ToDate, 1, null).Items;
+        }
+
+        private void rdoNotRented_CheckedChanged(object sender, EventArgs e)
+        {
+            CustomerHomeRentals = _customerHomeRentalPresenter.GetAlls(FromDate, ToDate, 2, null).Items;
         }
         #endregion
     }

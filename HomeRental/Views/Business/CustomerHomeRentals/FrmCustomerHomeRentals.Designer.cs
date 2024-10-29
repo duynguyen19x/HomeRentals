@@ -34,6 +34,7 @@
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.lblTitle = new DevExpress.XtraEditors.LabelControl();
             this.grvCustomerHomeRental = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn0 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -93,7 +94,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Location = new System.Drawing.Point(837, 53);
+            this.btnUpdate.Location = new System.Drawing.Point(837, 57);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 16;
@@ -114,6 +115,7 @@
             // grvCustomerHomeRental
             // 
             this.grvCustomerHomeRental.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn0,
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
@@ -129,6 +131,15 @@
             this.grvCustomerHomeRental.OptionsView.ShowGroupPanel = false;
             this.grvCustomerHomeRental.OptionsView.ShowIndicator = false;
             // 
+            // gridColumn0
+            // 
+            this.gridColumn0.Caption = "Mã thuê nhà";
+            this.gridColumn0.FieldName = "CustomerHomeRentalCode";
+            this.gridColumn0.Name = "gridColumn0";
+            this.gridColumn0.Visible = true;
+            this.gridColumn0.VisibleIndex = 0;
+            this.gridColumn0.Width = 69;
+            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Mã khác hàng";
@@ -136,7 +147,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.VisibleIndex = 1;
             this.gridColumn1.Width = 86;
             // 
             // gridColumn2
@@ -146,7 +157,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 2;
             this.gridColumn2.Width = 109;
             // 
             // gridColumn3
@@ -156,7 +167,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 3;
             this.gridColumn3.Width = 115;
             // 
             // gridColumn4
@@ -166,7 +177,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 4;
             this.gridColumn4.Width = 213;
             // 
             // gridColumn5
@@ -177,7 +188,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 5;
             this.gridColumn5.Width = 101;
             // 
             // gridColumn6
@@ -188,7 +199,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 6;
             this.gridColumn6.Width = 87;
             // 
             // gridColumn7
@@ -198,7 +209,7 @@
             this.gridColumn7.FieldName = "HomeRentalFloor";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.VisibleIndex = 7;
             this.gridColumn7.Width = 67;
             // 
             // gridColumn8
@@ -207,7 +218,7 @@
             this.gridColumn8.FieldName = "HomeRentalFacingName";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.VisibleIndex = 8;
             this.gridColumn8.Width = 109;
             // 
             // grcCustomerHomeRental
@@ -217,7 +228,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grcCustomerHomeRental.Location = new System.Drawing.Point(24, 106);
             this.grcCustomerHomeRental.MainView = this.grvCustomerHomeRental;
-            this.grcCustomerHomeRental.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
+            this.grcCustomerHomeRental.Margin = new System.Windows.Forms.Padding(15);
             this.grcCustomerHomeRental.Name = "grcCustomerHomeRental";
             this.grcCustomerHomeRental.Size = new System.Drawing.Size(888, 307);
             this.grcCustomerHomeRental.TabIndex = 12;
@@ -252,7 +263,7 @@
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl1.Location = new System.Drawing.Point(529, 59);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(44, 13);
             this.labelControl1.TabIndex = 19;
@@ -263,7 +274,7 @@
             this.dteFromDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dteFromDate.EditValue = null;
             this.dteFromDate.Location = new System.Drawing.Point(576, 57);
-            this.dteFromDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dteFromDate.Margin = new System.Windows.Forms.Padding(2);
             this.dteFromDate.Name = "dteFromDate";
             this.dteFromDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -280,8 +291,8 @@
             // 
             this.dteToDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dteToDate.EditValue = null;
-            this.dteToDate.Location = new System.Drawing.Point(733, 57);
-            this.dteToDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dteToDate.Location = new System.Drawing.Point(732, 58);
+            this.dteToDate.Margin = new System.Windows.Forms.Padding(2);
             this.dteToDate.Name = "dteToDate";
             this.dteToDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -298,7 +309,7 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Location = new System.Drawing.Point(680, 59);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(2);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(51, 13);
             this.labelControl2.TabIndex = 21;
@@ -308,27 +319,29 @@
             // 
             this.rdoRented.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoRented.AutoSize = true;
+            this.rdoRented.Checked = true;
             this.rdoRented.Location = new System.Drawing.Point(372, 57);
-            this.rdoRented.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoRented.Margin = new System.Windows.Forms.Padding(2);
             this.rdoRented.Name = "rdoRented";
             this.rdoRented.Size = new System.Drawing.Size(64, 17);
             this.rdoRented.TabIndex = 23;
+            this.rdoRented.TabStop = true;
             this.rdoRented.Text = "Đã thuê";
             this.rdoRented.UseVisualStyleBackColor = true;
-            this.rdoRented.Visible = false;
+            this.rdoRented.CheckedChanged += new System.EventHandler(this.rdoRented_CheckedChanged);
             // 
             // rdoNotRented
             // 
             this.rdoNotRented.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoNotRented.AutoSize = true;
-            this.rdoNotRented.Location = new System.Drawing.Point(436, 57);
-            this.rdoNotRented.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdoNotRented.Location = new System.Drawing.Point(440, 57);
+            this.rdoNotRented.Margin = new System.Windows.Forms.Padding(2);
             this.rdoNotRented.Name = "rdoNotRented";
-            this.rdoNotRented.Size = new System.Drawing.Size(76, 17);
+            this.rdoNotRented.Size = new System.Drawing.Size(56, 17);
             this.rdoNotRented.TabIndex = 24;
-            this.rdoNotRented.Text = "Chưa thuê";
+            this.rdoNotRented.Text = "Đã trả";
             this.rdoNotRented.UseVisualStyleBackColor = true;
-            this.rdoNotRented.Visible = false;
+            this.rdoNotRented.CheckedChanged += new System.EventHandler(this.rdoNotRented_CheckedChanged);
             // 
             // btnCheckOut
             // 
@@ -360,7 +373,7 @@
             this.Controls.Add(this.grcCustomerHomeRental);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCustomerHomeRentals";
             this.Text = "Khách hàng thuê nhà";
             this.Load += new System.EventHandler(this.FrmCustomerHomeRentals_Load);
@@ -401,5 +414,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraEditors.SimpleButton btnCheckOut;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn0;
     }
 }

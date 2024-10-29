@@ -293,15 +293,14 @@ namespace HomeRental
         }
         #endregion
 
-        #region Reports
+        #region Báo cáo
         private void btnRevenue_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frm = new Frm001();
+            frm.ShowDialog();
         }
         #endregion
 
         #endregion
-
-
     }
 }

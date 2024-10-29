@@ -12,7 +12,7 @@ namespace Services.IServices.Business
 {
     public interface ICustomerHomeRentalService
     {
-        Result<IList<CustomerHomeRentalModel>> GetAlls(DateTime? fromDate, DateTime? toDate, bool isRented);
+        Result<IList<CustomerHomeRentalModel>> GetAlls(DateTime? fromDate, DateTime? toDate, int rented, Guid? customerHomeRentalCurrentId);
         Result<Guid> Save(CustomerHomeRentalModel customerHomeRental);
         Result<CustomerHomeRentalModel> GetById(Guid id);
         Result<bool> DeleteById(Guid id);

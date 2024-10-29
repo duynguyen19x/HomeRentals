@@ -8,6 +8,7 @@ using HomeRental.IViews.Business.CustomerHomeRentals;
 using HomeRental.IViews.Business.Customers;
 using HomeRental.Presenters.Business.Customer;
 using HomeRental.Presenters.Business.CustomerHomeRentals;
+using HomeRental.Presenters.Business.HomeRentals;
 using HomeRental.Presenters.Business.User;
 using HomeRentals.Models.Business;
 using System;
@@ -22,6 +23,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities.Enum;
+using static DevExpress.DataProcessing.InMemoryDataProcessor.AddSurrogateOperationAlgorithm;
+using static DevExpress.Utils.HashCodeHelper;
 
 namespace HomeRental.Views.Business.CustomerHomeRentals
 {
@@ -158,6 +161,29 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
         private void FrmCustomerHomeRentalDetails_Load(object sender, EventArgs e)
         {
             InitData();
+
+            if ((Action == ActionModeType.Edit || Action == ActionModeType.CheckOut) && Id != null)
+            {
+                var result = _customerHomeRentalDetailPresenter.GetById(Id.GetValueOrDefault());
+                if (result.Items != null)
+                {
+                    Id = result.Items.Id;
+                    CustomerHomeRentalCode = result.Items.CustomerHomeRentalCode;
+                    CustomerId = result.Items.CustomerId;
+                    CustomerCode = result.Items.CustomerCode;
+                    CustomerName = result.Items.CustomerName;
+                    HomeRentalArea = result.Items.HomeRentalArea;
+                    HomeRentalCode = result.Items.HomeRentalCode;
+                    HomeRentalFacing = result.Items.HomeRentalFacing;
+                    HomeRentalFloor = result.Items.HomeRentalFloor;
+                    HomeRentalId = result.Items.HomeRentalId;
+                    Amount = result.Items.Amount;
+                    HomeRentalPrice = result.Items.HomeRentalPrice;
+                    RentalEndDate = result.Items.RentalEndDate;
+                    RentalStartDate = result.Items.RentalStartDate;
+                    HomeRentalDescription = result.Items.HomeRentalDescription;
+                }
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -229,7 +255,7 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
         private void LoadCustomerHomeRentals()
         {
             if (CustomerHomeRentals == null)
-                CustomerHomeRentals = _customerHomeRentalPresenter.GetAlls((DateTime?)default, (DateTime?)default, false).Items;
+                CustomerHomeRentals = _customerHomeRentalPresenter.GetAlls((DateTime?)default, (DateTime?)default, 0, Id).Items;
 
             GridView view = cbbHomeRental.Properties.View;
             cbbHomeRental.Properties.DataSource = CustomerHomeRentals;
@@ -289,7 +315,7 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
                 return isSave;
             }
 
-            if (RentalStartDate.Value.Date >= DateTime.Today)
+            if (RentalStartDate.Value.Date > DateTime.Today)
             {
                 MessageBox.Show($"Ngày thuê nhà {RentalStartDate.Value.ToString("dd/MM/yyyy")} phải nhỏ hơn ngày hiện tại {DateTime.Today.ToString("dd/MM/yyyy")}", "Thông báo");
                 isSave = false;
@@ -356,7 +382,7 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
 
         private void dteToDate_EditValueChanged(object sender, EventArgs e)
         {
-            if (RentalStartDate.HasValue && RentalEndDate.HasValue && RentalStartDate.Value.Date > RentalEndDate.Value.Date)
+            if (RentalStartDate.HasValue && RentalEndDate.HasValue && RentalEndDate.Value.Date > RentalStartDate.Value.Date)
             {
                 TimeSpan difference = RentalEndDate.Value.Date - RentalStartDate.Value.Date;
                 int numberOfDays = difference.Days;

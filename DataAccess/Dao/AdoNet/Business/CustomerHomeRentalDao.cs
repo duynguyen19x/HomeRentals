@@ -12,7 +12,7 @@ namespace DataAccess.Dao.AdoNet.Business
 {
     public class CustomerHomeRentalDao : ICustomerHomeRentalDao
     {
-        public Result<IList<CustomerHomeRentalDto>> GetAlls(DateTime? fromDate, DateTime? toDate, bool isRented)
+        public Result<IList<CustomerHomeRentalDto>> GetAlls(DateTime? fromDate, DateTime? toDate, int rented, Guid? customerHomeRentalCurrentId)
         {
             var result = new Result<IList<CustomerHomeRentalDto>>();
 
@@ -20,9 +20,10 @@ namespace DataAccess.Dao.AdoNet.Business
             {
                 result.Items = DatabaseHelper.QueryStoredProcedure<CustomerHomeRentalDto>("Proc_GetCustomerHomeRentals", new
                 {
-                    IsRented = isRented,
+                    Rented = rented,
                     FromDate = fromDate,
-                    ToDate = toDate
+                    ToDate = toDate,
+                    CustomerHomeRentalCurrentId = customerHomeRentalCurrentId
                 }).ToList();
             }
             catch (Exception ex)
