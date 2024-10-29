@@ -19,8 +19,8 @@ namespace DataAccess.Dao.AdoNet.Reports
             {
                 result.Items = DatabaseHelper.QueryStoredProcedure<CustomerHomeRentalDto>("Proc_GetRpt001", new
                 {
-                    FromDate = fromDate,
-                    ToDate = toDate
+                    FromDate = fromDate.Date,
+                    ToDate = toDate.Date
                 }).ToList();
             }
             catch (Exception ex)

@@ -17,8 +17,8 @@ namespace BusinessObjects.Entities.Business
         public Guid? CustomerId { get; set; }
         public Guid? HomeRentalId { get; set; }
 
-        public DateTime RentalStartDate { get; set; } // Ngày bắt đầ thuê
-        public DateTime RentalEndDate { get; set; } // Ngày hết hạn thuê
+        public DateTime? RentalStartDate { get; set; } // Ngày bắt đầ thuê
+        public DateTime? RentalEndDate { get; set; } // Ngày hết hạn thuê
 
         public decimal Amount { get; set; } // Thành tiền
     }

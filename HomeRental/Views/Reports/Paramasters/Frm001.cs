@@ -29,7 +29,7 @@ namespace HomeRental.Views.Reports.Paramasters
             var result = _reportPresenter.GetRpt001(dteFromDate.DateTime.Date, dteToDate.DateTime.Date);
             if (result.Items != null && result.Items.Count > 0)
             {
-                var rpt = new Frp001() 
+                var rpt = new Frp001(dteFromDate.DateTime.Date, dteToDate.DateTime.Date) 
                 { 
                     DataSource = result.Items
                 };

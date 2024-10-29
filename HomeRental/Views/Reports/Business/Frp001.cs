@@ -13,7 +13,7 @@ namespace HomeRental.Views.Reports.Business
             InitializeComponent();
         }
 
-        public Frp001(DateTime fromDate, DateTime toDate)
+        public Frp001(DateTime fromDate, DateTime toDate): this()
         {
             txtTime.Text = string.Format("Từ ngày: {0} - đến ngày: {1}", fromDate.ToString("dd/MM/yyyy"), toDate.ToString("dd/MM/yyyy"));
         }

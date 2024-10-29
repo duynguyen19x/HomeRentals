@@ -98,6 +98,7 @@
     <Compile Include="Presenters\Business\HomeRentals\HomeRentalPresenter.cs" />
     <Compile Include="Presenters\Business\Users\UserDetailPresenter.cs" />
     <Compile Include="Presenters\Business\Users\UserPresenter.cs" />
+    <Compile Include="Presenters\Reports\ReportPresenter.cs" />
     <Compile Include="Presenters\Systems\ConnectionPresenter.cs" />
     <Compile Include="Presenters\Systems\DatabasePresenter.cs" />
     <Compile Include="Presenters\Systems\LoginPresenter.cs" />
@@ -170,6 +171,12 @@
     <Compile Include="Views\Reports\FrmPrintPreviews.Designer.cs">
       <DependentUpon>FrmPrintPreviews.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Paramasters\Frm001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Paramasters\Frm001.Designer.cs">
+      <DependentUpon>Frm001.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Systems\FrmBackup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\FrmPrintPreviews.resx">
       <DependentUpon>FrmPrintPreviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Paramasters\Frm001.resx">
+      <DependentUpon>Frm001.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Systems\FrmBackup.resx">
       <DependentUpon>FrmBackup.cs</DependentUpon>
