@@ -16,6 +16,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -57,12 +58,23 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
                         {
                             dteToDate.Properties.ReadOnly = false;
                             spnAmount.Properties.ReadOnly = false;
+
+                            txtCustomerHomeRentalCode.Properties.ReadOnly = true;
+                            cbbCustomer.Properties.ReadOnly = true;
+                            cbbHomeRental.Properties.ReadOnly = true;
+                            dteFromDate.Properties.ReadOnly = true;
                         }
                         break;
                     default:
                         {
                             dteToDate.Properties.ReadOnly = true;
                             spnAmount.Properties.ReadOnly = true;
+
+
+                            txtCustomerHomeRentalCode.Properties.ReadOnly = false;
+                            cbbCustomer.Properties.ReadOnly = false;
+                            cbbHomeRental.Properties.ReadOnly = false;
+                            dteFromDate.Properties.ReadOnly = false;
                         }
                         break;
                 }
@@ -267,6 +279,8 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
                 erros.Add("Mã nhà");
             if (RentalStartDate == null || RentalStartDate == (DateTime)default)
                 erros.Add("Ngày thuê nhà");
+            if (Action == ActionModeType.CheckOut && RentalEndDate == null || RentalEndDate == (DateTime)default)
+                erros.Add("Ngày trả nhà");
 
             if (erros.Count > 0)
             {
@@ -280,6 +294,16 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
                 MessageBox.Show($"Ngày thuê nhà {RentalStartDate.Value.ToString("dd/MM/yyyy")} phải nhỏ hơn ngày hiện tại {DateTime.Today.ToString("dd/MM/yyyy")}", "Thông báo");
                 isSave = false;
                 return isSave;
+            }
+
+            if (Action == ActionModeType.CheckOut)
+            {
+                if (RentalStartDate.Value.Date > RentalEndDate.Value.Date)
+                {
+                    MessageBox.Show($"Ngày thuê nhà {RentalStartDate.Value.ToString("dd/MM/yyyy")} phải nhỏ hơn ngày trả nhà {RentalEndDate.Value.Date.ToString("dd/MM/yyyy")}", "Thông báo");
+                    isSave = false;
+                    return isSave;
+                }
             }
 
             return isSave;
@@ -328,6 +352,20 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
             HomeRentalFacing = 0;
             HomeRentalFacingName = null;
             Amount = 0;
+        }
+
+        private void dteToDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (RentalStartDate.HasValue && RentalEndDate.HasValue && RentalStartDate.Value.Date > RentalEndDate.Value.Date)
+            {
+                TimeSpan difference = RentalEndDate.Value.Date - RentalStartDate.Value.Date;
+                int numberOfDays = difference.Days;
+
+                if (numberOfDays == 0) // Nếu chưa được 1 ngày thì tính 1 ngày
+                    numberOfDays = 1;
+
+                Amount = HomeRentalPrice * numberOfDays;
+            }
         }
     }
 }
