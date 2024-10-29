@@ -79,12 +79,16 @@ namespace HomeRental.Views.Systems
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var s = _loginPresenter.Authentication();
-
-            this.Hide();
-
-            var frm = new FrmMain();
-            frm.ShowDialog();
+            var result = _loginPresenter.Authentication();
+            if (result.Success)
+            {
+                var frm = new FrmMain(this);
+                frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show(result.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

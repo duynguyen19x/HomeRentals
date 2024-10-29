@@ -84,6 +84,7 @@
     <Compile Include="Presenters\Business\Users\UserDetailPresenter.cs" />
     <Compile Include="Presenters\Business\Users\UserPresenter.cs" />
     <Compile Include="Presenters\Systems\ConnectionPresenter.cs" />
+    <Compile Include="Presenters\Systems\DatabasePresenter.cs" />
     <Compile Include="Presenters\Systems\LoginPresenter.cs" />
     <Compile Include="Presenters\Systems\LogoutPresenter.cs" />
     <Compile Include="Program.cs" />

@@ -120,7 +120,7 @@ namespace HomeRental.Views.Business.HomeRentals
 
             if (erros.Count > 0)
             {
-                MessageBox.Show(string.Format("[{0}] không được để trống!"), "Thông báo");
+                MessageBox.Show(string.Format("[{0}] không được để trống!", string.Join(", ", erros)), "Thông báo");
                 isSave = false;
                 return isSave;
             }

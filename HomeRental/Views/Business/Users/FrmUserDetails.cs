@@ -113,7 +113,7 @@ namespace HomeRental.Views.Business.Users
                 {
                     MessageBox.Show("Lưu thông công!", "Thông báo");
                     Id = result.Items;
-                }    
+                }
                 else if (result.Message != null)
                     MessageBox.Show("Lưu không thành công!" + "\n" + result.Message, "Thông báo");
             }
@@ -141,7 +141,7 @@ namespace HomeRental.Views.Business.Users
 
             if (erros.Count > 0)
             {
-                MessageBox.Show(string.Format("[{0}] không được để trống!"), "Thông báo");
+                MessageBox.Show(string.Format("[{0}] không được để trống!", string.Join(", ", erros)), "Thông báo");
                 isSave = false;
                 return isSave;
             }

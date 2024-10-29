@@ -50,9 +50,9 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +78,7 @@
             this.btnNotRented});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl1.MaxItemId = 14;
+            this.ribbonControl1.MaxItemId = 15;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 495;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -162,6 +162,10 @@
             this.btnRestore.Caption = "Khôi phục CSDL";
             this.btnRestore.Id = 9;
             this.btnRestore.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRestore.ImageOptions.LargeImage")));
+            this.btnRestore.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.btnRestore.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.btnRestore.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.btnRestore.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRestore_ItemClick);
             // 
@@ -170,6 +174,10 @@
             this.btnBackup.Caption = "Sao lưu CSDL";
             this.btnBackup.Id = 10;
             this.btnBackup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBackup.ImageOptions.LargeImage")));
+            this.btnBackup.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.btnBackup.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.btnBackup.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.btnBackup.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBackup_ItemClick);
             // 
@@ -244,7 +252,6 @@
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnCreateDatabase);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnRestore);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnBackup);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
@@ -254,18 +261,7 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.skinRibbonGalleryBarItem);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Giao diện";
-            // 
-            // xtraTabControl
-            // 
-            this.xtraTabControl.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
-            this.xtraTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl.Location = new System.Drawing.Point(0, 231);
-            this.xtraTabControl.Margin = new System.Windows.Forms.Padding(4);
-            this.xtraTabControl.Name = "xtraTabControl";
-            this.xtraTabControl.Size = new System.Drawing.Size(1764, 713);
-            this.xtraTabControl.TabIndex = 3;
-            this.xtraTabControl.CloseButtonClick += new System.EventHandler(this.xtraTabControl_CloseButtonClick);
+            this.ribbonPageGroup2.Text = "Giao diện úng dụng";
             // 
             // ribbonPage4
             // 
@@ -278,6 +274,17 @@
             // 
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Báo cáo danh thu";
+            // 
+            // xtraTabControl
+            // 
+            this.xtraTabControl.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeader;
+            this.xtraTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl.Location = new System.Drawing.Point(0, 231);
+            this.xtraTabControl.Margin = new System.Windows.Forms.Padding(4);
+            this.xtraTabControl.Name = "xtraTabControl";
+            this.xtraTabControl.Size = new System.Drawing.Size(1764, 713);
+            this.xtraTabControl.TabIndex = 3;
+            this.xtraTabControl.CloseButtonClick += new System.EventHandler(this.xtraTabControl_CloseButtonClick);
             // 
             // FrmMain
             // 
@@ -293,6 +300,7 @@
             this.Text = "QUẢN LÝ THUÊ NHÀ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).EndInit();
             this.ResumeLayout(false);
