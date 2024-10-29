@@ -1,6 +1,6 @@
-﻿namespace HomeRental.Views.Business.HomeRentals
+﻿namespace HomeRental.Views.Business.CustomerHomeRentals
 {
-    partial class FrmHomeRentals
+    partial class FrmCustomerHomeNotRentals
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.grcHomeRental = new DevExpress.XtraGrid.GridControl();
             this.grvHomeRental = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -40,44 +37,11 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lblTitle = new DevExpress.XtraEditors.LabelControl();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
+            this.lblTitle = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grcHomeRental)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvHomeRental)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(1012, 35);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(112, 34);
-            this.btnAdd.TabIndex = 14;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Location = new System.Drawing.Point(1134, 35);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(112, 34);
-            this.btnEdit.TabIndex = 13;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(1256, 35);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(112, 34);
-            this.btnDelete.TabIndex = 12;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // grcHomeRental
             // 
@@ -85,12 +49,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grcHomeRental.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.grcHomeRental.Location = new System.Drawing.Point(36, 91);
+            this.grcHomeRental.Location = new System.Drawing.Point(36, 90);
             this.grcHomeRental.MainView = this.grvHomeRental;
             this.grcHomeRental.Margin = new System.Windows.Forms.Padding(22);
             this.grcHomeRental.Name = "grcHomeRental";
             this.grcHomeRental.Size = new System.Drawing.Size(1332, 514);
-            this.grcHomeRental.TabIndex = 11;
+            this.grcHomeRental.TabIndex = 17;
             this.grcHomeRental.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvHomeRental});
             // 
@@ -115,7 +79,7 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Mã nhà";
-            this.gridColumn1.FieldName = "Code";
+            this.gridColumn1.FieldName = "HomeRentalCode";
             this.gridColumn1.MinWidth = 30;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
@@ -126,7 +90,7 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Địa chỉ";
-            this.gridColumn2.FieldName = "Address";
+            this.gridColumn2.FieldName = "HomeRentalAddress";
             this.gridColumn2.MinWidth = 30;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
@@ -137,7 +101,7 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Mô tả";
-            this.gridColumn3.FieldName = "Description";
+            this.gridColumn3.FieldName = "HomeRentalDescription";
             this.gridColumn3.MinWidth = 30;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
@@ -149,7 +113,7 @@
             // 
             this.gridColumn4.Caption = "Đơn giá";
             this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn4.FieldName = "Price";
+            this.gridColumn4.FieldName = "HomeRentalPrice";
             this.gridColumn4.MinWidth = 30;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
@@ -160,7 +124,7 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Diện tích";
-            this.gridColumn5.FieldName = "Area";
+            this.gridColumn5.FieldName = "HomeRentalArea";
             this.gridColumn5.MinWidth = 30;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
@@ -171,7 +135,7 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Tầng";
-            this.gridColumn6.FieldName = "Floor";
+            this.gridColumn6.FieldName = "HomeRentalFloor";
             this.gridColumn6.MinWidth = 30;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
@@ -182,7 +146,7 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Hướng";
-            this.gridColumn7.FieldName = "Facing";
+            this.gridColumn7.FieldName = "HomeRentalFacing";
             this.gridColumn7.MinWidth = 30;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
@@ -190,44 +154,39 @@
             this.gridColumn7.VisibleIndex = 6;
             this.gridColumn7.Width = 112;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Location = new System.Drawing.Point(1256, 35);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(112, 34);
+            this.btnUpdate.TabIndex = 21;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // lblTitle
             // 
             this.lblTitle.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
             this.lblTitle.Appearance.Options.UseFont = true;
-            this.lblTitle.Location = new System.Drawing.Point(36, 28);
+            this.lblTitle.Location = new System.Drawing.Point(36, 27);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(22, 4, 4, 4);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(346, 39);
-            this.lblTitle.TabIndex = 10;
-            this.lblTitle.Text = "Danh sách nhà cho thuê";
+            this.lblTitle.Size = new System.Drawing.Size(425, 39);
+            this.lblTitle.TabIndex = 16;
+            this.lblTitle.Text = "Danh sách nhà chưa cho thuê";
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Location = new System.Drawing.Point(892, 36);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(112, 34);
-            this.btnUpdate.TabIndex = 15;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // FrmHomeRentals
+            // FrmCustomerHomeNotRentals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1404, 631);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.grcHomeRental);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmHomeRentals";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhà cho thuê";
-            this.Load += new System.EventHandler(this.FrmHomeRentals_Load);
+            this.Name = "FrmCustomerHomeNotRentals";
+            this.Text = "FrmCustomerHomeNotRentals";
+            this.Load += new System.EventHandler(this.FrmCustomerHomeNotRentals_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grcHomeRental)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvHomeRental)).EndInit();
             this.ResumeLayout(false);
@@ -237,9 +196,6 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton btnAdd;
-        private DevExpress.XtraEditors.SimpleButton btnEdit;
-        private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraGrid.GridControl grcHomeRental;
         private DevExpress.XtraGrid.Views.Grid.GridView grvHomeRental;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -248,8 +204,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraEditors.LabelControl lblTitle;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
+        private DevExpress.XtraEditors.LabelControl lblTitle;
     }
 }

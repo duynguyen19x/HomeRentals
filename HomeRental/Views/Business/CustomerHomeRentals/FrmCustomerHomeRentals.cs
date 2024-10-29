@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace HomeRental.Views.Business.CustomerHomeRentals
 {
-    public partial class FrmCustomerHomeRentals : DevExpress.XtraEditors.XtraForm, ICustomerHomeRentalViews
+    public partial class FrmCustomerHomeRentals : XtraForm, ICustomerHomeRentalViews
     {
         CustomerHomeRentalPresenter _customerHomeRentalPresenter;
 
@@ -28,7 +28,15 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
         }
 
         #region Member
-        public IList<CustomerHomeRentalModel> CustomerHomeRentals { get; set; }
+        public IList<CustomerHomeRentalModel> CustomerHomeRentals
+        {
+            get => grcCustomerHomeRental.DataSource as IList<CustomerHomeRentalModel>;
+            set
+            {
+                grcCustomerHomeRental.DataSource = value;
+                grcCustomerHomeRental.RefreshDataSource();
+            }
+        }
 
         public DateTime FromDate
         {

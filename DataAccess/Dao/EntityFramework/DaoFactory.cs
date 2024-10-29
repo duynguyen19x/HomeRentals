@@ -21,5 +21,7 @@ namespace DataAccess.Dao.EntityFramework
         public IHomeRentalDao HomeRentalDao => throw new NotImplementedException();
 
         public ICustomerHomeRentalDao CustomerHomeRentalDao => throw new NotImplementedException();
+
+        public IDatabaseDao DatabaseDao => throw new NotImplementedException();
     }
 }

@@ -87,6 +87,7 @@ namespace HomeRental
             }
         }
 
+        #region Danh mục
         private void btnUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frm = new FrmUsers();
@@ -104,11 +105,50 @@ namespace HomeRental
             var frm = new FrmHomeRentals();
             TabCreate(frm);
         }
+        #endregion
 
+        #region Nhà cho thuê
         private void btnCustomerHomeRental_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frm = new FrmCustomerHomeRentals();
             TabCreate(frm);
+        }
+
+        private void btnNotRented_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = new FrmCustomerHomeNotRentals();
+            TabCreate(frm);
+        }
+        #endregion
+
+        #region Hệ thống
+        private void btnRestore_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCreateDatabase_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnBackup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void skinRibbonGalleryBarItem_GalleryItemClick(object sender, DevExpress.XtraBars.Ribbon.GalleryItemClickEventArgs e)
@@ -123,6 +163,7 @@ namespace HomeRental
                 ConfigurationManager.RefreshSection("appSettings");
             }
         }
+        #endregion
 
         #endregion
     }

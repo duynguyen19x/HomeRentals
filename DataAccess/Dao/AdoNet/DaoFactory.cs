@@ -14,5 +14,6 @@ namespace DataAccess.Dao.AdoNet
         public ICustomerDao CustomerDao => new CustomerDao();
         public IHomeRentalDao HomeRentalDao => new HomeRentalDao();
         public ICustomerHomeRentalDao CustomerHomeRentalDao => new CustomerHomeRentalDao();
+        public IDatabaseDao DatabaseDao => new DatabaseDao();
     }
 }

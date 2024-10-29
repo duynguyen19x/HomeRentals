@@ -25,7 +25,7 @@ namespace HomeRental
             BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle(System.Configuration.ConfigurationManager.AppSettings["SkinName"].ToString());
 
-            Application.Run(new FrmLogin());
+            Application.Run(new FrmBackup());
         }
     }
 }

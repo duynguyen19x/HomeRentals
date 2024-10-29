@@ -88,6 +88,12 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
             get => (Guid?)cbbHomeRental.EditValue;
             set => cbbHomeRental.EditValue = value;
         }
+        public string HomeRentalDescription
+        {
+            get => (string)txtHomeRentalDescription.EditValue;
+            set => txtHomeRentalDescription.EditValue = value;
+        }
+
         public DateTime? RentalStartDate
         {
             get => (DateTime?)dteFromDate.EditValue;
@@ -298,17 +304,30 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
 
         private void CbbHomeRental_EditValueChanged(object sender, EventArgs e)
         {
-            //if (e != null && e.NewValue != null)
-            //{
-            //    var customer = Customers?.FirstOrDefault(f => f.Id == (Guid)e.NewValue);
-            //    if (customer != null)
-            //    {
-            //        CustomerCode = customer.Code;
-            //        CustomerName = customer.Name;
+            if (e is ChangingEventArgs even)
+            {
+                var customerHomeRental = CustomerHomeRentals?.FirstOrDefault(f => f.Id == (Guid)even.NewValue);
+                if (customerHomeRental != null)
+                {
+                    HomeRentalPrice = customerHomeRental.HomeRentalPrice;
+                    HomeRentalDescription = customerHomeRental.HomeRentalDescription;
+                    HomeRentalArea = customerHomeRental.HomeRentalArea;
+                    HomeRentalFloor = customerHomeRental.HomeRentalFloor;
+                    HomeRentalFacing = customerHomeRental.HomeRentalFacing;
+                    HomeRentalFacingName = customerHomeRental.HomeRentalFacingName;
+                    Amount = customerHomeRental.Amount;
 
-            //        return;
-            //    }
-            //}
+                    return;
+                }
+            }
+
+            HomeRentalPrice = 0;
+            HomeRentalDescription = null;
+            HomeRentalArea = 0;
+            HomeRentalFloor = 0;
+            HomeRentalFacing = 0;
+            HomeRentalFacingName = null;
+            Amount = 0;
         }
     }
 }

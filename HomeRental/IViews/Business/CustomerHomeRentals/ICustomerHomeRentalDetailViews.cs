@@ -22,6 +22,7 @@ namespace HomeRental.IViews.Business.CustomerHomeRentals
         string CustomerName { get; set; }
 
         string HomeRentalCode { get; set; } // Mã nhà
+        string HomeRentalDescription { get; set; }
         decimal HomeRentalPrice { get; set; } // Giá thuê
         decimal HomeRentalArea { get; set; } // Diện tích
         int HomeRentalFloor { get; set; } // Tầng

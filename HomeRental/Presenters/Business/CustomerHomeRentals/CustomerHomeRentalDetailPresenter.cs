@@ -43,7 +43,6 @@ namespace HomeRental.Presenters.Business.CustomerHomeRentals
                 HomeRentalPrice = View.HomeRentalPrice,
                 RentalEndDate = View.RentalEndDate,
                 RentalStartDate = View.RentalStartDate,
-                HomeRentalFacingName = View.HomeRentalFacingName,
             });
         }
     }

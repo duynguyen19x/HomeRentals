@@ -51,6 +51,7 @@
     <Compile Include="IServices\Business\ICustomerService.cs" />
     <Compile Include="IServices\Business\IHomeRentalService.cs" />
     <Compile Include="IServices\Business\ILogoutServices.cs" />
+    <Compile Include="IServices\Systems\IDatabaseService.cs" />
     <Compile Include="IServices\Systems\ILoginServices.cs" />
     <Compile Include="IServices\Business\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Services\Business\CustomerService.cs" />
     <Compile Include="Services\Business\HomeRentalService.cs" />
     <Compile Include="Services\Business\UserService.cs" />
+    <Compile Include="Services\Systems\DatabaseService.cs" />
     <Compile Include="Services\Systems\LoginServices.cs" />
     <Compile Include="Services\Systems\LogoutServices.cs" />
   </ItemGroup>

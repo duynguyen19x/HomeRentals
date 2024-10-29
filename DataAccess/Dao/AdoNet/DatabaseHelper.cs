@@ -42,6 +42,11 @@ namespace DataAccess.Dao.AdoNet
             return connection.Execute(storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
         }
 
+        public static int Execute<T>(string sql)
+        {
+            return connection.Execute(sql, commandType: CommandType.Text);
+        }
+
         // Hàm gọi Stored Procedure trả về danh sách dữ liệu
         public static IEnumerable<T> QueryStoredProcedure<T>(string storedProcedureName, object parameters = null)
         {
