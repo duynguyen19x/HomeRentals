@@ -31,5 +31,39 @@ namespace DataAccess.Dao.AdoNet.Reports
 
             return result;
         }
+
+        public Result<IList<CustomerHomeRentalDto>> GetRpt002()
+        {
+            var result = new Result<IList<CustomerHomeRentalDto>>();
+
+            try
+            {
+                result.Items = DatabaseHelper.QueryStoredProcedure<CustomerHomeRentalDto>("Proc_GetRpt002").ToList();
+            }
+            catch (Exception ex)
+            {
+                result.Message = ex.Message;
+                result.Success = false;
+            }
+
+            return result;
+        }
+
+        public Result<IList<CustomerHomeRentalDto>> GetRpt003()
+        {
+            var result = new Result<IList<CustomerHomeRentalDto>>();
+
+            try
+            {
+                result.Items = DatabaseHelper.QueryStoredProcedure<CustomerHomeRentalDto>("Proc_GetRpt003").ToList();
+            }
+            catch (Exception ex)
+            {
+                result.Message = ex.Message;
+                result.Success = false;
+            }
+
+            return result;
+        }
     }
 }

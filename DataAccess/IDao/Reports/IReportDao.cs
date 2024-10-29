@@ -11,5 +11,7 @@ namespace DataAccess.IDao.Reports
     public interface IReportDao
     {
         Result<IList<CustomerHomeRentalDto>> GetRpt001(DateTime fromDate, DateTime toDate);
+        Result<IList<CustomerHomeRentalDto>> GetRpt002();
+        Result<IList<CustomerHomeRentalDto>> GetRpt003();
     }
 }

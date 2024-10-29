@@ -50,6 +50,8 @@ namespace DataAccess.Dao.AdoNet.Systems
 
             try
             {
+                var databaseNameSave = databaseName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss");
+
                 string connectionString = $"Server={server};Database=master;User Id={userName};Password={password};";
 
                 var backupQuery = $@"
@@ -57,7 +59,7 @@ namespace DataAccess.Dao.AdoNet.Systems
                     TO DISK = N'{backupFilePath}' 
                     WITH FORMAT, 
                     MEDIANAME = 'SQLServerBackups', 
-                    NAME = 'Full Backup of {databaseName}';";
+                    NAME = '{databaseNameSave}';";
 
                 using (var connection = new SqlConnection(connectionString))
                 {

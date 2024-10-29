@@ -11,5 +11,7 @@ namespace Services.IServices.Reports
     public interface IReportService
     {
         Result<IList<CustomerHomeRentalModel>> GetRpt001(DateTime fromDate, DateTime toDate);
+        Result<IList<CustomerHomeRentalModel>> GetRpt002();
+        Result<IList<CustomerHomeRentalModel>> GetRpt003();
     }
 }

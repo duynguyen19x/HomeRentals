@@ -23,5 +23,15 @@ namespace HomeRental.Presenters.Reports
         {
             return _reportService.GetRpt001(fromDate, toDate);
         }
+
+        public Result<IList<CustomerHomeRentalModel>> GetRpt002()
+        {
+            return _reportService.GetRpt002();
+        }
+
+        public Result<IList<CustomerHomeRentalModel>> GetRpt003()
+        {
+            return _reportService.GetRpt003();
+        }
     }
 }

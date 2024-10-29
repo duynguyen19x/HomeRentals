@@ -1,11 +1,14 @@
 ﻿using DevExpress.LookAndFeel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
+using HomeRental.Presenters.Reports;
 using HomeRental.Presenters.Systems;
 using HomeRental.Views.Business.CustomerHomeRentals;
 using HomeRental.Views.Business.Customers;
 using HomeRental.Views.Business.HomeRentals;
 using HomeRental.Views.Business.Users;
+using HomeRental.Views.Reports.Business;
+using HomeRental.Views.Reports;
 using HomeRental.Views.Reports.Paramasters;
 using HomeRental.Views.Systems;
 using System;
@@ -28,6 +31,8 @@ namespace HomeRental
     {
         private readonly LogoutPresenter _logoutPresenter;
         private readonly DatabasePresenter _databasePresenter;
+        private readonly ReportPresenter _reportPresenter;
+
         private readonly FrmLogin _frmLogin;
 
         public FrmMain()
@@ -35,6 +40,7 @@ namespace HomeRental
             InitializeComponent();
             _logoutPresenter = new LogoutPresenter();
             _databasePresenter = new DatabasePresenter();
+            _reportPresenter = new ReportPresenter();
         }
 
         public FrmMain(FrmLogin frmLogin) : this()
@@ -252,7 +258,7 @@ namespace HomeRental
                             serverName = config.AppSettings.Settings["ServerName"].Value;
 
                         if (ConfigurationManager.AppSettings["DatabaseName"] != null)
-                            databaseName = config.AppSettings.Settings["DatabaseName"].Value + "_" + DateTime.Now.ToString("yyyyMMddHHmmss");
+                            databaseName = config.AppSettings.Settings["DatabaseName"].Value; //+ "_" + DateTime.Now.ToString("yyyyMMddHHmmss");
 
                         if (ConfigurationManager.AppSettings["UserName"] != null)
                             userName = config.AppSettings.Settings["UserName"].Value;
@@ -298,6 +304,42 @@ namespace HomeRental
         {
             var frm = new Frm001();
             frm.ShowDialog();
+        }
+
+        private void btnRpCustomerHomeRental_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var result = _reportPresenter.GetRpt003();
+            if (result.Items != null && result.Items.Count > 0)
+            {
+                var rpt = new Frp003()
+                {
+                    DataSource = result.Items
+                };
+
+                var frm = new FrmPrintPreviews(rpt);
+            }
+            else
+            {
+                MessageBox.Show("Không cáo dữ liệu báo cáo!", "Thông báo");
+            }
+        }
+
+        private void btnRpNotRented_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var result = _reportPresenter.GetRpt002();
+            if (result.Items != null && result.Items.Count > 0)
+            {
+                var rpt = new Frp002()
+                {
+                    DataSource = result.Items
+                };
+
+                var frm = new FrmPrintPreviews(rpt);
+            }
+            else
+            {
+                MessageBox.Show("Không cáo dữ liệu báo cáo!", "Thông báo");
+            }
         }
         #endregion
 

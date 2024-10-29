@@ -25,5 +25,29 @@ namespace Services.Services.Reports
                 Items = ObjectMapper.Map<IList<CustomerHomeRentalModel>>(result.Items)
             };
         }
+
+        public Result<IList<CustomerHomeRentalModel>> GetRpt002()
+        {
+            var result = Factory.ReportDao.GetRpt002();
+
+            return new Result<IList<CustomerHomeRentalModel>>()
+            {
+                Success = result.Success,
+                Message = result.Message,
+                Items = ObjectMapper.Map<IList<CustomerHomeRentalModel>>(result.Items)
+            };
+        }
+
+        public Result<IList<CustomerHomeRentalModel>> GetRpt003()
+        {
+            var result = Factory.ReportDao.GetRpt003();
+
+            return new Result<IList<CustomerHomeRentalModel>>()
+            {
+                Success = result.Success,
+                Message = result.Message,
+                Items = ObjectMapper.Map<IList<CustomerHomeRentalModel>>(result.Items)
+            };
+        }
     }
 }

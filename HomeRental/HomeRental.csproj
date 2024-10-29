@@ -165,6 +165,18 @@
     <Compile Include="Views\Reports\Business\Frp001.Designer.cs">
       <DependentUpon>Frp001.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Business\Frp003.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Business\Frp003.Designer.cs">
+      <DependentUpon>Frp003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Business\Frp002.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Business\Frp002.Designer.cs">
+      <DependentUpon>Frp002.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\FrmPrintPreviews.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +249,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Business\Frp001.resx">
       <DependentUpon>Frp001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Business\Frp003.resx">
+      <DependentUpon>Frp003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Business\Frp002.resx">
+      <DependentUpon>Frp002.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\FrmPrintPreviews.resx">
       <DependentUpon>FrmPrintPreviews.cs</DependentUpon>
