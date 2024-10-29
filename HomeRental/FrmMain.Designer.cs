@@ -53,6 +53,7 @@
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
+            this.btnRevenue = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.SuspendLayout();
@@ -75,17 +76,18 @@
             this.btnBackup,
             this.skinRibbonGalleryBarItem,
             this.btnCustomerHomeRental,
-            this.btnNotRented});
+            this.btnNotRented,
+            this.btnRevenue});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl1.MaxItemId = 15;
+            this.ribbonControl1.MaxItemId = 16;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 495;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage3,
-            this.ribbonPage2,
-            this.ribbonPage4});
+            this.ribbonPage4,
+            this.ribbonPage2});
             this.ribbonControl1.Size = new System.Drawing.Size(1764, 231);
             // 
             // btnUser
@@ -272,6 +274,7 @@
             // 
             // ribbonPageGroup4
             // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnRevenue);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Báo cáo danh thu";
             // 
@@ -285,6 +288,18 @@
             this.xtraTabControl.Size = new System.Drawing.Size(1764, 713);
             this.xtraTabControl.TabIndex = 3;
             this.xtraTabControl.CloseButtonClick += new System.EventHandler(this.xtraTabControl_CloseButtonClick);
+            // 
+            // btnRevenue
+            // 
+            this.btnRevenue.Caption = "Doanh thu";
+            this.btnRevenue.Id = 15;
+            this.btnRevenue.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRevenue.ImageOptions.LargeImage")));
+            this.btnRevenue.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.btnRevenue.ItemAppearance.Hovered.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.btnRevenue.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.btnRevenue.ItemAppearance.Normal.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.btnRevenue.Name = "btnRevenue";
+            this.btnRevenue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRevenue_ItemClick);
             // 
             // FrmMain
             // 
@@ -334,6 +349,7 @@
         private DevExpress.XtraBars.BarButtonItem btnNotRented;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonItem btnRevenue;
     }
 }
 

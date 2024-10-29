@@ -6,6 +6,7 @@ using HomeRental.Views.Business.CustomerHomeRentals;
 using HomeRental.Views.Business.Customers;
 using HomeRental.Views.Business.HomeRentals;
 using HomeRental.Views.Business.Users;
+using HomeRental.Views.Reports.Paramasters;
 using HomeRental.Views.Systems;
 using System;
 using System.Collections.Generic;
@@ -292,6 +293,15 @@ namespace HomeRental
         }
         #endregion
 
+        #region Reports
+        private void btnRevenue_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = new Frm001();
+        }
         #endregion
+
+        #endregion
+
+
     }
 }

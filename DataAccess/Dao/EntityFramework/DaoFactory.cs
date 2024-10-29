@@ -1,5 +1,6 @@
 ﻿using DataAccess.IDao;
 using DataAccess.IDao.Business;
+using DataAccess.IDao.Reports;
 using DataAccess.IDao.Systems;
 using System;
 using System.Collections.Generic;
@@ -23,5 +24,7 @@ namespace DataAccess.Dao.EntityFramework
         public ICustomerHomeRentalDao CustomerHomeRentalDao => throw new NotImplementedException();
 
         public IDatabaseDao DatabaseDao => throw new NotImplementedException();
+
+        public IReportDao ReportDao => throw new NotImplementedException();
     }
 }

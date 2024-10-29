@@ -1,6 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using HomeRental.IViews.Systems;
 using HomeRental.Presenters.Systems;
+using HomeRental.Views.Reports;
+using HomeRental.Views.Reports.Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

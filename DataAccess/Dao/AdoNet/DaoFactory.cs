@@ -1,7 +1,9 @@
 ﻿using DataAccess.Dao.AdoNet.Business;
+using DataAccess.Dao.AdoNet.Reports;
 using DataAccess.Dao.AdoNet.Systems;
 using DataAccess.IDao;
 using DataAccess.IDao.Business;
+using DataAccess.IDao.Reports;
 using DataAccess.IDao.Systems;
 
 namespace DataAccess.Dao.AdoNet
@@ -15,5 +17,6 @@ namespace DataAccess.Dao.AdoNet
         public IHomeRentalDao HomeRentalDao => new HomeRentalDao();
         public ICustomerHomeRentalDao CustomerHomeRentalDao => new CustomerHomeRentalDao();
         public IDatabaseDao DatabaseDao => new DatabaseDao();
+        public IReportDao ReportDao => new ReportDao();
     }
 }

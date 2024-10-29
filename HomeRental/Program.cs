@@ -1,6 +1,7 @@
 ﻿using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
+using HomeRental.Views.Reports;
 using HomeRental.Views.Systems;
 using Services;
 using System;
@@ -25,7 +26,7 @@ namespace HomeRental
             BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle(System.Configuration.ConfigurationManager.AppSettings["SkinName"].ToString());
 
-            Application.Run(new FrmBackup());
+            Application.Run(new FrmLogin());
         }
     }
 }
