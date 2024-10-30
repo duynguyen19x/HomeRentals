@@ -18,6 +18,8 @@ namespace BusinessObjects.Dtos.Business
 
         public string CustomerCode { get; set; }
         public string CustomerName { get; set; }
+        public string CustomerAddress { get; set; }
+        public string CustomerPhoneNumber { get; set; }
 
         public string HomeRentalCode { get; set; } // Mã nhà
         public string HomeRentalAddress { get; set; } // Địa chỉ

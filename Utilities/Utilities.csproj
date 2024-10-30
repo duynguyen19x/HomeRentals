@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commons\CursorState.cs" />
+    <Compile Include="Commons\UserSession.cs" />
     <Compile Include="Enum\ActionModeType.cs" />
     <Compile Include="Enum\FacingType.cs" />
     <Compile Include="Enum\GenderType.cs" />

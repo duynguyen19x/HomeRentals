@@ -84,6 +84,13 @@ namespace HomeRental.Views.Systems
             var result = _loginPresenter.Authentication();
             if (result.Success)
             {
+                if (result.Items != null)
+                {
+                    UserSession.UserName = result.Items.UserName;
+                    UserSession.PhoneNumber = result.Items.PhoneNumber;
+                    UserSession.Address = result.Items.Address;
+                }
+
                 var frm = new FrmMain(this);
                 frm.ShowDialog();
             }

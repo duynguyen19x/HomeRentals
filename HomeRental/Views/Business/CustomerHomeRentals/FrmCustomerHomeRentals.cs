@@ -3,6 +3,8 @@ using HomeRental.IViews.Business.CustomerHomeRentals;
 using HomeRental.Presenters.Business.Customer;
 using HomeRental.Presenters.Business.CustomerHomeRentals;
 using HomeRental.Views.Business.Customers;
+using HomeRental.Views.Reports.Business;
+using HomeRental.Views.Reports;
 using HomeRentals.Models.Business;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HomeRental.Views.Reports.Documents;
 
 namespace HomeRental.Views.Business.CustomerHomeRentals
 {
@@ -118,6 +121,16 @@ namespace HomeRental.Views.Business.CustomerHomeRentals
                 frm.ShowDialog();
 
                 LoadData();
+            }
+        }
+
+        private void btnDocument_Click(object sender, EventArgs e)
+        {
+            var customerHomeRentalSelected = grvCustomerHomeRental.GetFocusedRow() as CustomerHomeRentalModel;
+            if (customerHomeRentalSelected != null)
+            {
+                var rpt = new RptDocument001(customerHomeRentalSelected);
+                var frm = new FrmPrintPreviews(rpt);
             }
         }
 

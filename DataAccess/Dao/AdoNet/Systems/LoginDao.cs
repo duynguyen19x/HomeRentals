@@ -8,14 +8,14 @@ namespace DataAccess.Dao.AdoNet.Systems
 {
     public class LoginDao : ILoginDao
     {
-        public Result<bool> Authentication(LoginEntity login)
+        public Result<UserEntity> Authentication(LoginEntity login)
         {
-            var result = new Result<bool>();
+            var result = new Result<UserEntity>();
 
             try
             {
-                var user = DatabaseHelper.QuerySingleStoredProcedure<UserEntity>("Proc_GetUserByUserNameAndPasswords", login);
-                if (user == null)
+                result.Items = DatabaseHelper.QuerySingleStoredProcedure<UserEntity>("Proc_GetUserByUserNameAndPasswords", login);
+                if (result.Items == null)
                 {
                     result.Success = false;
                     result.Message = "Tài khoản hoặc mật khẩu không đúng!";

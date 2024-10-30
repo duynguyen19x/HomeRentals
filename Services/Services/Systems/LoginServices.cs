@@ -1,4 +1,6 @@
-﻿using BusinessObjects.Entities.Systems;
+﻿using BusinessObjects.Entities.Business;
+using BusinessObjects.Entities.Systems;
+using HomeRentals.Models.Business;
 using HomeRentals.Models.Systems;
 using Services.IServices.Systems;
 using Utilities;
@@ -12,10 +14,17 @@ namespace Services.Services.Systems
 
         }
 
-        public Result<bool> Authentication(LoginModel login)
+        public Result<UserModel> Authentication(LoginModel login)
         {
             var loginEntity = ObjectMapper.Map<LoginEntity>(login);
-            return Factory.LoginDao.Authentication(loginEntity);
+            var result = Factory.LoginDao.Authentication(loginEntity);
+
+            return new Result<UserModel>()
+            {
+                Items = ObjectMapper.Map<UserModel>(result.Items),
+                Message = result.Message,
+                Success = result.Success,
+            };
         }
 
         public Result<bool> ConnectDatabase(ConnectionModel connection)

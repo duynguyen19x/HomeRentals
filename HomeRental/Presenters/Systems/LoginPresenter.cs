@@ -1,4 +1,5 @@
 ﻿using HomeRental.IViews.Systems;
+using HomeRentals.Models.Business;
 using HomeRentals.Models.Systems;
 using Services.IServices.Systems;
 using Services.Services.Systems;
@@ -20,7 +21,7 @@ namespace HomeRental.Presenters.Systems
             _loginServer = new LoginServices();
         }
 
-        public Result<bool> Authentication()
+        public Result<UserModel> Authentication()
         {
             var login = new LoginModel()
             {
