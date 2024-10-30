@@ -11,6 +11,10 @@ namespace Services.Services.Systems
 {
     public class DatabaseService : BaseServices, IDatabaseService
     {
+        public Result<bool> CreateDatabase(string server, string databaseName, string userName, string password)
+        {
+            return Factory.DatabaseDao.CreateDatabase(server, databaseName, userName, password);
+        }
         public Result<bool> RestoreDatabase(string server, string userName, string password, string databaseName, string backupFilePath)
         {
             return Factory.DatabaseDao.RestoreDatabase(server, userName, password, databaseName, backupFilePath);

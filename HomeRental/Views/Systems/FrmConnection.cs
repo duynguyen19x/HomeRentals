@@ -14,10 +14,12 @@ namespace HomeRental.Views.Systems
         {
             InitializeComponent();
             _connectionPresenter = new ConnectionPresenter(this);
+            _databasePresenter = new DatabasePresenter();
         }
 
         #region Member
         ConnectionPresenter _connectionPresenter;
+        DatabasePresenter _databasePresenter;
 
         public string ServerName
         {
@@ -66,7 +68,52 @@ namespace HomeRental.Views.Systems
 
         private void btnCreateDatabase_Click(object sender, EventArgs e)
         {
+            var result = _databasePresenter.CreateDatabase(ServerName, DatabaseName, UserName, Password);
+            if (result.Success)
+            {
+                MessageBox.Show("Tạo cơ sở dữ liệu thành công!", "Thông báo");
+                result = _connectionPresenter.ConnectDatabase();
+                if (!result.Success)
+                {
+                    if (result.Message != null && result.Message.Contains("The server was not found or was not accessible"))
+                        MessageBox.Show("Máy chủ không được tìm thấy hoặc không thể truy cập!", "Thông báo");
+                    else
+                        MessageBox.Show(result.Message, "Thông báo");
+                }
+                else
+                {
+                    // Mở file cấu hình
+                    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
+                    if (ConfigurationManager.AppSettings["ServerName"] == null)
+                        config.AppSettings.Settings.Add("ServerName", ServerName);
+                    else
+                        config.AppSettings.Settings["ServerName"].Value = ServerName;
+
+                    if (ConfigurationManager.AppSettings["DatabaseName"] == null)
+                        config.AppSettings.Settings.Add("DatabaseName", DatabaseName);
+                    else
+                        config.AppSettings.Settings["DatabaseName"].Value = DatabaseName;
+
+                    if (ConfigurationManager.AppSettings["UserName"] == null)
+                        config.AppSettings.Settings.Add("UserName", UserName);
+                    else
+                        config.AppSettings.Settings["UserName"].Value = UserName;
+
+                    if (ConfigurationManager.AppSettings["Password"] == null)
+                        config.AppSettings.Settings.Add("Password", Password);
+                    else
+                        config.AppSettings.Settings["Password"].Value = Password;
+
+                    // Lưu thay đổi
+                    config.Save(ConfigurationSaveMode.Modified);
+                    ConfigurationManager.RefreshSection("appSettings");
+                }
+            }
+            else if (result.Message != null && result.Message.Contains("The server was not found or was not accessible"))
+                MessageBox.Show("Máy chủ không được tìm thấy hoặc không thể truy cập!", "Thông báo");
+            else
+                MessageBox.Show(result.Message, "Thông báo");
         }
 
         private void btnConnectDatabase_Click(object sender, EventArgs e)

@@ -9,6 +9,7 @@ namespace Services.IServices.Systems
 {
     public interface IDatabaseService
     {
+        Result<bool> CreateDatabase(string server, string databaseName, string userName, string password);
         Result<bool> RestoreDatabase(string server, string userName, string password, string databaseName, string backupFilePath);
         Result<bool> BackupDatabase(string server, string userName, string password, string databaseName, string backupFilePath);
     }

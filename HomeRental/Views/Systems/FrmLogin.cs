@@ -111,15 +111,16 @@ namespace HomeRental.Views.Systems
             this.Hide();
             var frm = new FrmConnection();
             frm.ShowDialog();
-            this.ShowDialog();
-        }
 
-        #endregion
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.ShowDialog();
+        }
 
         private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             _logoutPresenter.CloseConnectDatabase();
             Application.Exit();
         }
+        #endregion
     }
 }
