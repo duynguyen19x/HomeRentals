@@ -48,6 +48,7 @@
     <Compile Include="Enum\ActionModeType.cs" />
     <Compile Include="Enum\FacingType.cs" />
     <Compile Include="Enum\GenderType.cs" />
+    <Compile Include="Helper\Cryptography.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

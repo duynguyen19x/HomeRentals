@@ -130,16 +130,29 @@ namespace DataAccess.Dao.AdoNet.Systems
             {
                 string connectionString = $"Server={server};Database=master;User Id={userName};Password={password};";
 
-                var restoreQuery = $@"
-                    USE master;
-                    ALTER DATABASE [{databaseName}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-                    RESTORE DATABASE [{databaseName}] FROM DISK = N'{backupFilePath}' WITH REPLACE;
-                    ALTER DATABASE [{databaseName}] SET MULTI_USER; ";
+                //var restoreQuery = $@"
+                //    USE master;
+                //    ALTER DATABASE [{databaseName}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+                //    RESTORE DATABASE [{databaseName}] FROM DISK = N'{backupFilePath}' WITH REPLACE;
+                //    ALTER DATABASE [{databaseName}] SET MULTI_USER; ";
+
+                //using (var connection = new SqlConnection(connectionString))
+                //{
+                //    connection.Open();
+                //    connection.Execute(restoreQuery);
+                //    connection.Close();
+                //    connection.Dispose();
+                //}
 
                 using (var connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    connection.Execute(restoreQuery);
+
+                    connection.Execute("USE master");
+                    connection.Execute("ALTER DATABASE " + databaseName + " SET SINGLE_USER WITH ROLLBACK IMMEDIATE");
+                    connection.Execute("RESTORE DATABASE " + databaseName + " FROM DISK = '" + backupFilePath + "' WITH  RECOVERY");
+                    connection.Execute("ALTER DATABASE " + databaseName + " SET MULTI_USER");
+
                     connection.Close();
                     connection.Dispose();
                 }
@@ -163,17 +176,30 @@ namespace DataAccess.Dao.AdoNet.Systems
 
                 string connectionString = $"Server={server};Database=master;User Id={userName};Password={password};";
 
-                var backupQuery = $@"
-                    BACKUP DATABASE [{databaseName}] 
-                    TO DISK = N'{backupFilePath}' 
-                    WITH FORMAT, 
-                    MEDIANAME = 'SQLServerBackups', 
-                    NAME = '{databaseNameSave}';";
+                //var backupQuery = $@"
+                //    BACKUP DATABASE [{databaseName}] 
+                //    TO DISK = N'{backupFilePath}' 
+                //    WITH FORMAT, 
+                //    MEDIANAME = 'SQLServerBackups', 
+                //    NAME = '{databaseNameSave}';";
+
+                //using (var connection = new SqlConnection(connectionString))
+                //{
+                //    connection.Open();
+                //    connection.Execute(backupQuery);
+                //    connection.Close();
+                //    connection.Dispose();
+                //}
 
                 using (var connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    connection.Execute(backupQuery);
+
+                    connection.Execute("USE master");
+                    connection.Execute("ALTER DATABASE " + databaseName + " SET SINGLE_USER WITH ROLLBACK IMMEDIATE");
+                    connection.Execute("BACKUP DATABASE " + databaseName + " TO DISK = '" + backupFilePath + "'");
+                    connection.Execute("ALTER DATABASE " + databaseName + " SET MULTI_USER");
+
                     connection.Close();
                     connection.Dispose();
                 }

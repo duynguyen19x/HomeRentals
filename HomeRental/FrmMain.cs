@@ -49,7 +49,6 @@ namespace HomeRental
         }
 
         #region Member
-        public bool IsRestart { get; set; }
         #endregion
 
         #region Function
@@ -57,20 +56,12 @@ namespace HomeRental
         private void FrmMain_Load(object sender, EventArgs e)
         {
             _frmLogin.Hide();
-            IsRestart = false;
         }
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (!IsRestart)
-            {
-                _logoutPresenter.CloseConnectDatabase();
-                Application.Exit();
-            }
-            else
-            {
-                this.Close();
-            }
+            _logoutPresenter.CloseConnectDatabase();
+            Application.Exit();
         }
 
         private void TabCreate(XtraForm frm, string tabTitle = null)
@@ -217,9 +208,7 @@ namespace HomeRental
                             XtraMessageBox.Show("Khôi phục cơ sở dữ liệu thành công.\n Chương trình sẽ khởi động lại. Vui lòng đăng nhập lại!",
                                 "Hoàn thành", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-                            IsRestart = true;
-                            this.Close();
-                            _frmLogin.ShowDialog();
+                            Application.Restart();
                         }
                         else if (result.Message != null)
                         {
